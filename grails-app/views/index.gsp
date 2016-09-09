@@ -20,6 +20,10 @@
 <script type="text/javascript">
     window.contextPath = "${request.contextPath}";
 </script>
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="static/javascript/vendor/app.min.js"></script> <!-- the contract/web3 js -->
+
 </head>
 
 <body ng-app="blockheads" ng-controller="IndexController as indexCtrl">
@@ -80,7 +84,7 @@
 <g:message code="spinner.alt" default="Loading&hellip;"/>
 </div>
 
-<asset:javascript src="/blockheads/blockheads.js"/>
-<script type="javascript" src="static/javascript/vendor/app.min.js" />
 </body>
+<asset:javascript src="/blockheads/blockheads.js"/>
+
 </html>

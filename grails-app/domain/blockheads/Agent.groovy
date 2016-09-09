@@ -68,4 +68,6 @@ class Agent {
 
         incentives()
     }
+
+    static fetchMode = [contract: 'eager']
 }
