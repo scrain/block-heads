@@ -82,5 +82,6 @@
     </div>
 
     <asset:javascript src="/blockheads/blockheads.js" />
+    <script type="javascript" src="static/javascript/vendor/app.min.js"/> <!-- the contract/web3 js -->
 </body>
 </html>
