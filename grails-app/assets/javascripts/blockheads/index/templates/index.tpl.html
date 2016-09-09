@@ -31,11 +31,13 @@
                         </a>
                     </div>
                     <div class="jumbotron-contents">
-                        <h1>Implementing the HTML and CSS into your user interface project</h1>
-                        <h2>HTML Structure</h2>
-                        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                        <h2>CSS Structure</h2>
-                        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <h2>New Users</h2>
+                        <p><a class="list" ui-sref="agent.create">Sign up here</a></p>
+
+                        <a ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')" ui-sref="{{c.logicalPropertyName}}.list">{{c.name}}</a>
+
+                        <h2>Existing Agents</h2>
+                        <p>Login</p>
                     </div>
                 </div>
             </div>

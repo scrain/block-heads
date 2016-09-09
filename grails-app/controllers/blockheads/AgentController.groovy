@@ -34,7 +34,7 @@ class AgentController {
 
         agent.save flush:true
 
-        respond agent, [status: CREATED, view:"show"]
+        respond agent, [status: CREATED, view:"edit"]
     }
 
     @Transactional
@@ -49,6 +49,10 @@ class AgentController {
             transactionStatus.setRollbackOnly()
             respond agent.errors, view:'edit'
             return
+        }
+
+        if ( ! agent.contract?.id ) {
+            agent.contract = null
         }
 
         agent.save flush:true
