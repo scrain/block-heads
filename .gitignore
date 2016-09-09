@@ -5,6 +5,7 @@ Thumbs.db
 build/
 node_modules/
 out/
+classes/
 *.iml
 *.ipr
 *.iws
