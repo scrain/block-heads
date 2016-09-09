@@ -21,9 +21,6 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
     vm.updateAgent = function() {
         vm.errors = undefined;
         var updateServer  = function(contract) {
-            if (contract && contract.name != 'none') {
-                vm.agent.contractAddress = contract.address;
-            }
             vm.agent.$update(function() {
                 $state.go('agent.show', {id: vm.agent.id});
             }, function(response) {
@@ -50,7 +47,7 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
             }
         };
 
-        if (vm.agent.contract && !vm.agent.contractAddress) {
+        if (vm.agent.contract && !vm.agent.contract.id === 4 && !vm.agent.contractAddress) {
             // create new blockchain contract
             contractService.createAgentOffer(vm.agent.contract, transactionCompleteCb);
         } else {
