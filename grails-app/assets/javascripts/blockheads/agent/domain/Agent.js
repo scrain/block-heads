@@ -17,7 +17,8 @@ function Agent($resource, domainListConversion, domainConversion, domainToManyCo
     Agent.list = Agent.query;
 
     Agent.prototype.toString = function() {
-        return 'blockheads.Agent : ' + (this.id ? this.id : '(unsaved)');
+        // return 'blockheads.Agent : ' + (this.id ? this.id : '(unsaved)');
+        return this.lastName + ", " + firstName;
     };
 
     return Agent;

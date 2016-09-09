@@ -17,7 +17,8 @@ function Contract($resource) {
     Contract.list = Contract.query;
 
     Contract.prototype.toString = function() {
-        return 'blockheads.Contract : ' + (this.id ? this.id : '(unsaved)');
+        // return 'blockheads.Contract : ' + (this.id ? this.id : '(unsaved)');
+        return this.name;
     };
 
     return Contract;

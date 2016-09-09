@@ -17,7 +17,8 @@ function InsuranceApp($resource) {
     InsuranceApp.list = InsuranceApp.query;
 
     InsuranceApp.prototype.toString = function() {
-        return 'blockheads.InsuranceApp : ' + (this.id ? this.id : '(unsaved)');
+        // return 'blockheads.InsuranceApp : ' + (this.id ? this.id : '(unsaved)');
+        return this.number;
     };
 
     return InsuranceApp;
