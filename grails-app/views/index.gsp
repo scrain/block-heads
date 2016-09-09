@@ -52,17 +52,11 @@
 
 <div class="container">
 
-    <!-- bread crumb -->
-    <div class="row">
-        <ol class="breadcrumb breadcrumb-arrow">
-            <li><a href="#">Welcome</a></li>
-            <li><a href="#">User Name</a></li>
-            <li><a href="#">Personal Info</a></li>
-            <li><a href="#">Offers</a></li>
-            <li class="active"><span>Data</span></li>
-        </ol>
-    </div>
 
+
+    <div ui-view></div>
+
+    <!-- prev/next nav -->
     <div class="row">
         <ul class="pager">
             <li class="previous"><a href="#">Previous</a></li>
@@ -70,17 +64,15 @@
         </ul>
     </div>
 
+    <!-- progress bar -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width: 40%">40%</div>
 
-
-<div class="progress">
-    <div class="progress-bar progress-bar-success" style="width: 40%">40%</div>
-
-    <div class="progress-bar progress-bar-warning" style="width: 25%">25%</div>
-</div>
-
-<div ui-view></div>
-
+        <div class="progress-bar progress-bar-warning" style="width: 25%">25%</div>
     </div>
+
+
+</div>
 
 <div class="footer" role="contentinfo"></div>
 

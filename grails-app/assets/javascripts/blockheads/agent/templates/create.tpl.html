@@ -1,21 +1,35 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a ui-sref="agent.list" class="list">Agent List</a></li>
-    </ul>
-</div>
-<div id="create-agent" class="content scaffold-create" role="main">
-    <h1>Create Agent</h1>
-    <ul class="errors" role="alert" ng-if="vm.errors">
-        <li ng-repeat="error in vm.errors">{{error.message}}</li>
-    </ul>
+<!--<div class="nav" role="navigation">-->
+<!--<ul>-->
+<!--<li><a ui-sref="index" class="home">Home</a></li>-->
+<!--<li><a ui-sref="agent.list" class="list">Agent List</a></li>-->
+<!--</ul>-->
+<!--</div>-->
 
-    <form name="saveAgent" ng-submit="vm.saveAgent()">
-        <fieldset class="form">
-            <ng-include src="'/blockheads/agent/form.html'"></ng-include>
-        </fieldset>
-        <fieldset class="buttons">
-            <input type="submit" name="create" class="save" value="Create" />
-        </fieldset>
-    </form>
+<!-- bread crumb -->
+<div class="row">
+    <ol class="breadcrumb breadcrumb-arrow">
+        <li class="active"><span>User Account</span></li>
+        <li>Personal Details</li>
+        <li><span>Select Offer</span></li>
+        <li><span>Review</span></li>
+    </ol>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div id="create-agent" class="content scaffold-create" role="main">
+            <ul class="errors" role="alert" ng-if="vm.errors">
+                <li ng-repeat="error in vm.errors">{{error.message}}</li>
+            </ul>
+
+            <form name="saveAgent" ng-submit="vm.saveAgent()">
+                <fieldset class="form">
+                    <ng-include src="'/blockheads/agent/account-form.html'"></ng-include>
+                </fieldset>
+                <p />
+                <fieldset class="buttons">
+                    <input type="submit" name="create" class="btn btn-block save" value="Create"/>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </div>

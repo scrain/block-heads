@@ -1,0 +1,79 @@
+<fieldset class="form">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="fieldcontain required">
+                <label for="firstName">First Name
+                    <span class="required-indicator">*</span>
+                </label>
+                <input required="" name="firstName" id="firstName" ng-model="vm.agent.firstName" type="text" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="fieldcontain required">
+                <label for="lastName">Last Name
+                    <span class="required-indicator">*</span>
+                </label>
+                <input required="" name="lastName" id="lastName" ng-model="vm.agent.lastName" type="text" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="fieldcontain required">
+                <label for="birthday">Birthday
+                    <span class="required-indicator">*</span>
+                </label>
+                <input required="" name="birthday" id="birthday" ng-model="vm.agent.birthday" type="date" placeholder="YYYY-MM-DD" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="fieldcontain required">
+                <label for="governmentId">Government Id
+                    <span class="required-indicator">*</span>
+                </label>
+                <input required="" name="governmentId" id="governmentId" ng-model="vm.agent.governmentId" type="text" class="form-control"/>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <div class="fieldcontain required">
+                <label for="address1">Address
+                    <span class="required-indicator">*</span>
+                </label>
+                <input required="" name="address1" id="address1" ng-model="vm.agent.address1" type="text" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="fieldcontain required">
+                <label for="city">City
+                    <span class="required-indicator">*</span>
+                </label>
+                <input required="" name="city" id="city" ng-model="vm.agent.city" type="text" class="form-control"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <label for="address1">&nbsp;</label>
+            <div class="fieldcontain">
+                <input name="address2" id="address2" ng-model="vm.agent.address2" type="text" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="fieldcontain required">
+                <label for="state">State
+                    <span class="required-indicator">*</span>
+                </label>
+                <select required="" name="state" id="state" ng-model="vm.agent.state" ng-options="state for state in vm.stateList track by state.id" class="form-control"></select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="fieldcontain required">
+                <label for="zip">Zip
+                    <span class="required-indicator">*</span>
+                </label>
+                <input required="" name="zip" id="zip" ng-model="vm.agent.zip" type="text" class="form-control"/>
+            </div>
+        </div>
+    </div>
+</fieldset>

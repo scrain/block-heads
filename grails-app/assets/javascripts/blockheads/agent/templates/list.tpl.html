@@ -9,7 +9,6 @@
     <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Username</th>
       <th>Password</th>
       <th>First Name</th>
@@ -21,10 +20,7 @@
   <tbody>
     <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="agent in vm.agentList">
       <td>
-        <a ui-sref="agent.show({id: agent.id})">{{agent.id}}</a>
-      </td>
-      <td>
-        <span>{{agent.username}}</span>
+        <a ui-sref="agent.show({id: agent.id})">{{agent.username}}</a>
       </td>
       <td>
         <span>{{agent.password}}</span>

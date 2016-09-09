@@ -44,26 +44,28 @@ class Agent {
     static constraints = {
         username blank: false, unique: true
         password blank: false
-        firstName blank: false
-        lastName blank: false
-        governmentId blank: false  // TODO: regex validation?
-        birthday()
 
-        email blank: false, email: true
+        firstName nullable: true
+        lastName nullable: true
+        governmentId nullable: true  // TODO: regex validation?
+        birthday nullable: true
 
-        trainingStatus inList: ['not started', 'in progress', 'complete']
+        email nullable: true, email: true
 
-        address1 blank: false
+        trainingStatus nullable: true, inList: ['not started', 'in progress', 'complete']
+
+        address1 nullable: true
         address2 nullable: true
-        city blank: false
-        state()
-        zip()   // TODO: regex validation?
+        city nullable: true
+        state nullable: true
+        zip nullable: true   // TODO: regex validation?
 
         agentId nullable: true
         licenseStates()
 
         contract nullable: true
         contractAddress nullable: true
+
         incentives()
     }
 }

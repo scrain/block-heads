@@ -16,7 +16,7 @@ function AgentCreateController(Agent, $state, State, Contract, Incentive, Transa
     vm.saveAgent = function() {
         vm.errors = undefined;
         vm.agent.$save({}, function() {
-            $state.go('agent.show', {id: vm.agent.id});
+            $state.go('agent.edit', {id: vm.agent.id});
         }, function(response) {
             var data = response.data;
             if (data.hasOwnProperty('message')) {
