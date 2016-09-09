@@ -1,6 +1,9 @@
 //= wrapped
+//= require /bootflat/jquery-1.10.1.min
+//= require /bootflat/icheck.min
+//= require /bootflat/jquery.fs.selecter.min
+//= require /bootflat/jquery.fs.stepper.min
 //= require /angular/angular
-//= require_tree /bootflat
 //= require /blockheads/core/blockheads.core
 //= require /blockheads/index/blockheads.index
 //= require /blockheads/agent/blockheads.agent
