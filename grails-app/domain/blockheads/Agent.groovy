@@ -54,7 +54,7 @@ class Agent {
         trainingStatus inList: ['not started', 'in progress', 'complete']
 
         address1 blank: false
-        address2()
+        address2 nullable: true
         city blank: false
         state()
         zip()   // TODO: regex validation?

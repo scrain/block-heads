@@ -28,7 +28,7 @@ class Contract {
 
         type        blank: false, inList: ['Fixed Duration']
         amount      min: 0.0
-        term        blank: false, inList: ['2 year', '3 years', '5 years' ]
+        term        blank: false, inList: ['2 years', '3 years', '5 years' ]
         frequency   blank: false, inList: ['Quarterly', 'Annually']
         maxPayout   min: 0.0
 
