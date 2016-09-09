@@ -1,0 +1,53 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="name">Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="name" id="name" ng-model="vm.contract.name" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="description">Description
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="description" id="description" ng-model="vm.contract.description" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="type">Type
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="type" id="type" ng-model="vm.contract.type">
+      <option value="Fixed Duration">Fixed Duration</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="amount">Amount
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="amount" id="amount" ng-model="vm.contract.amount" type="number" step="any" min="0.0" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="term">Term
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="term" id="term" ng-model="vm.contract.term">
+      <option value="2 year">2 year</option>
+      <option value="3 years">3 years</option>
+      <option value="5 years">5 years</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="frequency">Frequency
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="frequency" id="frequency" ng-model="vm.contract.frequency">
+      <option value="Quarterly">Quarterly</option>
+      <option value="Annually">Annually</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="maxPayout">Max Payout
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="maxPayout" id="maxPayout" ng-model="vm.contract.maxPayout" type="number" step="any" min="0.0" />
+  </div>
+</fieldset>

@@ -1,0 +1,50 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="insuranceApp.create" class="create">New InsuranceApp</a></li>
+    </ul>
+</div>
+<div id="list-insuranceApp" class="content scaffold-list" role="main">
+    <h1>InsuranceApp List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Number</th>
+      <th>Face Amount</th>
+      <th>Premium</th>
+      <th>Agent Id</th>
+      <th>Plan Type</th>
+      <th>Insured Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="insuranceApp in vm.insuranceAppList">
+      <td>
+        <a ui-sref="insuranceApp.show({id: insuranceApp.id})">{{insuranceApp.id}}</a>
+      </td>
+      <td>
+        <span>{{insuranceApp.number}}</span>
+      </td>
+      <td>
+        <span>{{insuranceApp.faceAmount}}</span>
+      </td>
+      <td>
+        <span>{{insuranceApp.premium}}</span>
+      </td>
+      <td>
+        <span>{{insuranceApp.agentId}}</span>
+      </td>
+      <td>
+        <span>{{insuranceApp.planType}}</span>
+      </td>
+      <td>
+        <span>{{insuranceApp.insuredName}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

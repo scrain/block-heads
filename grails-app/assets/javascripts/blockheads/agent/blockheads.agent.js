@@ -4,6 +4,9 @@
 //= require /angular/angular-resource
 //= require /blockheads/core/blockheads.core
 //= require /blockheads/state/blockheads.state
+//= require /blockheads/contract/blockheads.contract
+//= require /blockheads/incentive/blockheads.incentive
+//= require /blockheads/transaction/blockheads.transaction
 //= require_self
 //= require_tree services
 //= require_tree controllers
@@ -15,7 +18,10 @@ angular.module("blockheads.agent", [
     "ui.router",
     "ngResource",
     "blockheads.core",
-    "blockheads.state"
+    "blockheads.state",
+    "blockheads.contract",
+    "blockheads.incentive",
+    "blockheads.transaction"
 ]).config(config);
 
 function config($stateProvider) {

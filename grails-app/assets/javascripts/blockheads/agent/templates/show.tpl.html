@@ -102,6 +102,38 @@
       </ul>
     </div>
   </li>
+  <li class="fieldcontain">
+    <span id="contract-label" class="property-label">Contract</span>
+    <div class="property-value" aria-labelledby="contract-label">
+      <a ui-sref="contract.show({id: vm.agent.contract.id})">{{vm.agent.contract.toString()}}</a>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="contractAddress-label" class="property-label">Contract Address</span>
+    <div class="property-value" aria-labelledby="contractAddress-label">
+      <span>{{vm.agent.contractAddress}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="incentives-label" class="property-label">Incentives</span>
+    <div class="property-value" aria-labelledby="incentives-label">
+      <ul>
+        <li ng-repeat="incentive in vm.agent.incentives">
+          <a ui-sref="incentive.show({id: incentive.id})">{{incentive.toString()}}</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="transactions-label" class="property-label">Transactions</span>
+    <div class="property-value" aria-labelledby="transactions-label">
+      <ul>
+        <li ng-repeat="transaction in vm.agent.transactions">
+          <a ui-sref="transaction.show({id: transaction.id})">{{transaction.toString()}}</a>
+        </li>
+      </ul>
+    </div>
+  </li>
 </ol>
     <form ng-submit="vm.delete()">
         <fieldset class="buttons">

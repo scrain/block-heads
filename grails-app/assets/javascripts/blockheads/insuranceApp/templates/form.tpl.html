@@ -1,0 +1,55 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="number">Number
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="number" id="number" ng-model="vm.insuranceApp.number" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="faceAmount">Face Amount
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="faceAmount" id="faceAmount" ng-model="vm.insuranceApp.faceAmount" type="number" step="any" min="0.0" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="premium">Premium
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="premium" id="premium" ng-model="vm.insuranceApp.premium" type="number" step="any" min="0.0" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="agentId">Agent Id
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="agentId" id="agentId" ng-model="vm.insuranceApp.agentId" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="planType">Plan Type
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="planType" id="planType" ng-model="vm.insuranceApp.planType">
+      <option value="Term">Term</option>
+      <option value="foo">foo</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="insuredName">Insured Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="insuredName" id="insuredName" ng-model="vm.insuranceApp.insuredName" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="status">Status
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="status" id="status" ng-model="vm.insuranceApp.status">
+      <option value="pending">pending</option>
+      <option value="issued">issued</option>
+      <option value="declined">declined</option>
+    </select>
+  </div>
+  <div class="fieldcontain">
+    <label for="issueDate">Issue Date</label>
+    <input name="issueDate" id="issueDate" ng-model="vm.insuranceApp.issueDate" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+</fieldset>

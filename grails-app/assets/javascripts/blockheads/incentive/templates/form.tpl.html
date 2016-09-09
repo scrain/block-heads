@@ -1,0 +1,45 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="name">Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="name" id="name" ng-model="vm.incentive.name" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="reward">Reward
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="reward" id="reward" ng-model="vm.incentive.reward" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="description">Description
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="description" id="description" ng-model="vm.incentive.description" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="type">Type
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="type" id="type" ng-model="vm.incentive.type">
+      <option value="foo">foo</option>
+      <option value="bar">bar</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="amount">Amount
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="amount" id="amount" ng-model="vm.incentive.amount" type="number" step="any" min="0.0" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="term">Term
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="term" id="term" ng-model="vm.incentive.term">
+      <option value="1 month">1 month</option>
+      <option value="2 months">2 months</option>
+      <option value="3 months">3 months</option>
+    </select>
+  </div>
+</fieldset>

@@ -4,10 +4,13 @@ angular
     .module("blockheads.agent")
     .controller("AgentEditController", AgentEditController);
 
-function AgentEditController(Agent, $stateParams, $state, State) {
+function AgentEditController(Agent, $stateParams, $state, State, Contract, Incentive, Transaction) {
     var vm = this;
 
     vm.stateList = State.list();
+    vm.contractList = Contract.list();
+    vm.incentiveList = Incentive.list();
+    vm.transactionList = Transaction.list();
 
     Agent.get({id: $stateParams.id}, function(data) {
         vm.agent = new Agent(data);

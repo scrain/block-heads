@@ -1,0 +1,50 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="incentive.create" class="create">New Incentive</a></li>
+    </ul>
+</div>
+<div id="list-incentive" class="content scaffold-list" role="main">
+    <h1>Incentive List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Reward</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Term</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="incentive in vm.incentiveList">
+      <td>
+        <a ui-sref="incentive.show({id: incentive.id})">{{incentive.id}}</a>
+      </td>
+      <td>
+        <span>{{incentive.name}}</span>
+      </td>
+      <td>
+        <span>{{incentive.reward}}</span>
+      </td>
+      <td>
+        <span>{{incentive.description}}</span>
+      </td>
+      <td>
+        <span>{{incentive.type}}</span>
+      </td>
+      <td>
+        <span>{{incentive.amount}}</span>
+      </td>
+      <td>
+        <span>{{incentive.term}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

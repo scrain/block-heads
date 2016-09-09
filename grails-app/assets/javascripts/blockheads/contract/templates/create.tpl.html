@@ -1,0 +1,21 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="contract.list" class="list">Contract List</a></li>
+    </ul>
+</div>
+<div id="create-contract" class="content scaffold-create" role="main">
+    <h1>Create Contract</h1>
+    <ul class="errors" role="alert" ng-if="vm.errors">
+        <li ng-repeat="error in vm.errors">{{error.message}}</li>
+    </ul>
+
+    <form name="saveContract" ng-submit="vm.saveContract()">
+        <fieldset class="form">
+            <ng-include src="'/blockheads/contract/form.html'"></ng-include>
+        </fieldset>
+        <fieldset class="buttons">
+            <input type="submit" name="create" class="save" value="Create" />
+        </fieldset>
+    </form>
+</div>

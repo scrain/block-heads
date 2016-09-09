@@ -1,0 +1,48 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="transaction.list" class="list">Transaction List</a></li>
+        <li><a class="create" ui-sref="transaction.create" class="create">New Transaction</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show Transaction</h1>
+    <ol class="property-list transaction">
+  <li class="fieldcontain">
+    <span id="status-label" class="property-label">Status</span>
+    <div class="property-value" aria-labelledby="status-label">
+      <span>{{vm.transaction.status}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="faceAmount-label" class="property-label">Face Amount</span>
+    <div class="property-value" aria-labelledby="faceAmount-label">
+      <span>{{vm.transaction.faceAmount}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="premium-label" class="property-label">Premium</span>
+    <div class="property-value" aria-labelledby="premium-label">
+      <span>{{vm.transaction.premium}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="dateCreated-label" class="property-label">Date Created</span>
+    <div class="property-value" aria-labelledby="dateCreated-label">
+      <span>{{vm.transaction.dateCreated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="lastUpdated-label" class="property-label">Last Updated</span>
+    <div class="property-value" aria-labelledby="lastUpdated-label">
+      <span>{{vm.transaction.lastUpdated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="transaction.edit({id: vm.transaction.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

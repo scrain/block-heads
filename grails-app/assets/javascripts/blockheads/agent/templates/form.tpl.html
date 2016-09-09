@@ -89,4 +89,20 @@
     <label for="licenseStates">License States</label>
     <select name="licenseStates" id="licenseStates" ng-model="vm.agent.licenseStates" ng-options="state for state in vm.stateList track by state.id" multiple=""></select>
   </div>
+  <div class="fieldcontain">
+    <label for="contract">Contract</label>
+    <select name="contract" id="contract" ng-model="vm.agent.contract" ng-options="contract for contract in vm.contractList track by contract.id"></select>
+  </div>
+  <div class="fieldcontain">
+    <label for="contractAddress">Contract Address</label>
+    <input name="contractAddress" id="contractAddress" ng-model="vm.agent.contractAddress" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="incentives">Incentives</label>
+    <select name="incentives" id="incentives" ng-model="vm.agent.incentives" ng-options="incentive for incentive in vm.incentiveList track by incentive.id" multiple=""></select>
+  </div>
+  <div class="fieldcontain">
+    <label for="transactions">Transactions</label>
+    <select name="transactions" id="transactions" ng-model="vm.agent.transactions" ng-options="transaction for transaction in vm.transactionList track by transaction.id" multiple=""></select>
+  </div>
 </fieldset>

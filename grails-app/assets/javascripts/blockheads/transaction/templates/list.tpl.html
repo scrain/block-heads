@@ -1,0 +1,46 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="transaction.create" class="create">New Transaction</a></li>
+    </ul>
+</div>
+<div id="list-transaction" class="content scaffold-list" role="main">
+    <h1>Transaction List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Status</th>
+      <th>Face Amount</th>
+      <th>Premium</th>
+      <th>Date Created</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="transaction in vm.transactionList">
+      <td>
+        <a ui-sref="transaction.show({id: transaction.id})">{{transaction.id}}</a>
+      </td>
+      <td>
+        <span>{{transaction.status}}</span>
+      </td>
+      <td>
+        <span>{{transaction.faceAmount}}</span>
+      </td>
+      <td>
+        <span>{{transaction.premium}}</span>
+      </td>
+      <td>
+        <span>{{transaction.dateCreated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+      <td>
+        <span>{{transaction.lastUpdated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

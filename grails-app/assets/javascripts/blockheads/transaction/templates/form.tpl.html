@@ -1,0 +1,24 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="status">Status
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="status" id="status" ng-model="vm.transaction.status">
+      <option value="pending">pending</option>
+      <option value="complete">complete</option>
+      <option value="cancelled">cancelled</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="faceAmount">Face Amount
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="faceAmount" id="faceAmount" ng-model="vm.transaction.faceAmount" type="number" step="any" min="0.0" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="premium">Premium
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="premium" id="premium" ng-model="vm.transaction.premium" type="number" step="any" min="0.0" />
+  </div>
+</fieldset>

@@ -2,10 +2,11 @@ package blockheads
 
 
 import grails.rest.*
+import groovy.transform.Sortable
 
+@Sortable(includes=['lastName', 'firstName'])
 @Resource(readOnly = false, formats = ['json', 'xml'])
 class Agent {
-
     String username
     String password
     String firstName
@@ -27,10 +28,21 @@ class Agent {
     String agentId
     SortedSet<State> licenseStates
 
-    static hasMany = [licenseStates: State]
+    Contract contract
+    SortedSet<Incentive> incentives
+
+    String contractAddress
+
+    SortedSet<Transaction> transactions
+
+    static hasMany = [
+        licenseStates:  State,
+        incentives:     Incentive,
+        transactions:   Transaction
+    ]
 
     static constraints = {
-        username blank: false
+        username blank: false, unique: true
         password blank: false
         firstName blank: false
         lastName blank: false
@@ -49,5 +61,9 @@ class Agent {
 
         agentId nullable: true
         licenseStates()
+
+        contract nullable: true
+        contractAddress nullable: true
+        incentives()
     }
 }

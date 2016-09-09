@@ -1,0 +1,72 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="contract.list" class="list">Contract List</a></li>
+        <li><a class="create" ui-sref="contract.create" class="create">New Contract</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show Contract</h1>
+    <ol class="property-list contract">
+  <li class="fieldcontain">
+    <span id="name-label" class="property-label">Name</span>
+    <div class="property-value" aria-labelledby="name-label">
+      <span>{{vm.contract.name}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="description-label" class="property-label">Description</span>
+    <div class="property-value" aria-labelledby="description-label">
+      <span>{{vm.contract.description}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="type-label" class="property-label">Type</span>
+    <div class="property-value" aria-labelledby="type-label">
+      <span>{{vm.contract.type}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="amount-label" class="property-label">Amount</span>
+    <div class="property-value" aria-labelledby="amount-label">
+      <span>{{vm.contract.amount}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="term-label" class="property-label">Term</span>
+    <div class="property-value" aria-labelledby="term-label">
+      <span>{{vm.contract.term}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="frequency-label" class="property-label">Frequency</span>
+    <div class="property-value" aria-labelledby="frequency-label">
+      <span>{{vm.contract.frequency}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="maxPayout-label" class="property-label">Max Payout</span>
+    <div class="property-value" aria-labelledby="maxPayout-label">
+      <span>{{vm.contract.maxPayout}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="dateCreated-label" class="property-label">Date Created</span>
+    <div class="property-value" aria-labelledby="dateCreated-label">
+      <span>{{vm.contract.dateCreated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="lastUpdated-label" class="property-label">Last Updated</span>
+    <div class="property-value" aria-labelledby="lastUpdated-label">
+      <span>{{vm.contract.lastUpdated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="contract.edit({id: vm.contract.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

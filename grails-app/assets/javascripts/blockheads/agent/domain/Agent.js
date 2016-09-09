@@ -10,8 +10,8 @@ function Agent($resource, domainListConversion, domainConversion, domainToManyCo
         "agent/:id",
         {"id": "@id"},
         {"update": {method: "PUT"},
-         "query": {method: "GET", isArray: true, transformResponse: [angular.fromJson, domainListConversion("State", "state", "domainConversion"), domainListConversion("State", "licenseStates", "domainToManyConversion")]},
-         "get": {method: 'GET', transformResponse: [angular.fromJson, domainConversion("State", "state"), domainToManyConversion("State", "licenseStates")]}}
+         "query": {method: "GET", isArray: true, transformResponse: [angular.fromJson, domainListConversion("State", "state", "domainConversion"), domainListConversion("State", "licenseStates", "domainToManyConversion"), domainListConversion("Contract", "contract", "domainConversion"), domainListConversion("Incentive", "incentives", "domainToManyConversion"), domainListConversion("Transaction", "transactions", "domainToManyConversion")]},
+         "get": {method: 'GET', transformResponse: [angular.fromJson, domainConversion("State", "state"), domainToManyConversion("State", "licenseStates"), domainConversion("Contract", "contract"), domainToManyConversion("Incentive", "incentives"), domainToManyConversion("Transaction", "transactions")]}}
     );
 
     Agent.list = Agent.query;

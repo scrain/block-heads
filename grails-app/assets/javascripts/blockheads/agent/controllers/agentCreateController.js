@@ -4,10 +4,13 @@ angular
     .module("blockheads.agent")
     .controller("AgentCreateController", AgentCreateController);
 
-function AgentCreateController(Agent, $state, State) {
+function AgentCreateController(Agent, $state, State, Contract, Incentive, Transaction) {
 
     var vm = this;
     vm.stateList = State.list();
+    vm.contractList = Contract.list();
+    vm.incentiveList = Incentive.list();
+    vm.transactionList = Transaction.list();
     vm.agent = new Agent();
     
     vm.saveAgent = function() {

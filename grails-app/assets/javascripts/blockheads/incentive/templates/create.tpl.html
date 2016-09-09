@@ -1,0 +1,21 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="incentive.list" class="list">Incentive List</a></li>
+    </ul>
+</div>
+<div id="create-incentive" class="content scaffold-create" role="main">
+    <h1>Create Incentive</h1>
+    <ul class="errors" role="alert" ng-if="vm.errors">
+        <li ng-repeat="error in vm.errors">{{error.message}}</li>
+    </ul>
+
+    <form name="saveIncentive" ng-submit="vm.saveIncentive()">
+        <fieldset class="form">
+            <ng-include src="'/blockheads/incentive/form.html'"></ng-include>
+        </fieldset>
+        <fieldset class="buttons">
+            <input type="submit" name="create" class="save" value="Create" />
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,78 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="insuranceApp.list" class="list">InsuranceApp List</a></li>
+        <li><a class="create" ui-sref="insuranceApp.create" class="create">New InsuranceApp</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show InsuranceApp</h1>
+    <ol class="property-list insuranceApp">
+  <li class="fieldcontain">
+    <span id="number-label" class="property-label">Number</span>
+    <div class="property-value" aria-labelledby="number-label">
+      <span>{{vm.insuranceApp.number}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="faceAmount-label" class="property-label">Face Amount</span>
+    <div class="property-value" aria-labelledby="faceAmount-label">
+      <span>{{vm.insuranceApp.faceAmount}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="premium-label" class="property-label">Premium</span>
+    <div class="property-value" aria-labelledby="premium-label">
+      <span>{{vm.insuranceApp.premium}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="agentId-label" class="property-label">Agent Id</span>
+    <div class="property-value" aria-labelledby="agentId-label">
+      <span>{{vm.insuranceApp.agentId}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="planType-label" class="property-label">Plan Type</span>
+    <div class="property-value" aria-labelledby="planType-label">
+      <span>{{vm.insuranceApp.planType}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="insuredName-label" class="property-label">Insured Name</span>
+    <div class="property-value" aria-labelledby="insuredName-label">
+      <span>{{vm.insuranceApp.insuredName}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="status-label" class="property-label">Status</span>
+    <div class="property-value" aria-labelledby="status-label">
+      <span>{{vm.insuranceApp.status}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="issueDate-label" class="property-label">Issue Date</span>
+    <div class="property-value" aria-labelledby="issueDate-label">
+      <span>{{vm.insuranceApp.issueDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="dateCreated-label" class="property-label">Date Created</span>
+    <div class="property-value" aria-labelledby="dateCreated-label">
+      <span>{{vm.insuranceApp.dateCreated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="lastUpdated-label" class="property-label">Last Updated</span>
+    <div class="property-value" aria-labelledby="lastUpdated-label">
+      <span>{{vm.insuranceApp.lastUpdated | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="insuranceApp.edit({id: vm.insuranceApp.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>
