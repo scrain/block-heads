@@ -5,17 +5,17 @@
       <div class="price-title">
         <h3>{{vm.contractList[0].term}} Plan</h3>
 
-        <p>${{vm.contractList[0].maxPayout}} payout</p>
+        <p>${{vm.contractList[0].maxPayout/1000}}K payout</p>
       </div>
 
       <div class="price-body">
         <h4>Aggressive</h4>
 
-        <p>Sell ${{vm.contractList[0].amount}} in premiums {{vm.contractList[0].frequency}}</p>
+        <p>Sell ${{vm.contractList[0].amount/1000}}K in premiums {{vm.contractList[0].frequency}}</p>
         <ul>
           <li>Sell for {{vm.contractList[0].term}}s</li>
           <li>Earn commissions on all sales!</li>
-          <li>$10K payout for loans after {{vm.contractList[0].term}}s!</li>
+          <li>${{vm.contractList[0].maxPayout/1000}}K payout for loans after {{vm.contractList[0].term}}s!</li>
         </ul>
       </div>
 
@@ -27,17 +27,17 @@
       <div class="price-title">
         <h3>{{vm.contractList[1].term}} Plan</h3>
 
-        <p>${{vm.contractList[1].maxPayout}} payout</p>
+        <p>${{vm.contractList[1].maxPayout/1000}}K payout</p>
       </div>
 
       <div class="price-body">
         <h4>Moderate</h4>
 
-        <p>Sell ${{vm.contractList[1].amount}} in premiums {{vm.contractList[1].frequency}}</p>
+        <p>Sell ${{vm.contractList[1].amount/1000}}K in premiums {{vm.contractList[1].frequency}}</p>
         <ul>
           <li>Sell for {{vm.contractList[1].term}}s</li>
           <li>Earn commissions on all sales!</li>
-          <li>$10K payout for loans after {{vm.contractList[1].term}}s!</li>
+          <li>${{vm.contractList[1].maxPayout/1000}}K payout for loans after {{vm.contractList[1].term}}s!</li>
         </ul>
       </div>
 
@@ -49,17 +49,17 @@
       <div class="price-title">
         <h3>{{vm.contractList[2].term}} Plan</h3>
 
-        <p>${{vm.contractList[2].maxPayout}} payout</p>
+        <p>${{vm.contractList[2].maxPayout/1000}}K payout</p>
       </div>
 
       <div class="price-body">
         <h4>Steady</h4>
 
-        <p>Sell ${{vm.contractList[2].amount}} in premiums {{vm.contractList[2].frequency}}</p>
+        <p>Sell ${{vm.contractList[2].amount/1000}}K in premiums {{vm.contractList[2].frequency}}</p>
         <ul>
           <li>Sell for {{vm.contractList[2].term}}s</li>
           <li>Earn commissions on all sales!</li>
-          <li>$10K payout for loans after {{vm.contractList[2].term}}s!</li>
+          <li>${{vm.contractList[2].maxPayout/1000}}K payout for loans after {{vm.contractList[2].term}}s!</li>
         </ul>
       </div>
 
