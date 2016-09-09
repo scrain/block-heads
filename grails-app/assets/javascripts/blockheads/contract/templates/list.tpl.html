@@ -3,68 +3,68 @@
   <ul>
     <li class="unit price-primary">
       <div class="price-title">
-        <h3>$299</h3>
+        <h3>{{vm.contractList[0].term}} Plan</h3>
 
-        <p>per month</p>
+        <p>$10,000 payout</p>
       </div>
 
       <div class="price-body">
-        <h4>Basic</h4>
+        <h4>Aggressive</h4>
 
-        <p>Lots of clients &amp; users</p>
+        <p>Sell ${{vm.contractList[0].amount}} in premiums per year</p>
         <ul>
-          <li>250 SKU's</li>
-          <li>1 GB Storage</li>
-          <li>3,5% transaction fee</li>
+          <li>Sell for {{vm.contractList[0].term}}s</li>
+          <li>Earn commissions on all sales!</li>
+          <li>$10K payout for loans after {{vm.contractList[0].term}}s!</li>
         </ul>
       </div>
 
       <div class="price-foot">
-        <button type="button" class="btn btn-primary">Try a Week</button>
+        <button type="button" class="btn btn-primary">Accept Offer</button>
       </div>
     </li>
     <li class="unit price-success active">
       <div class="price-title">
-        <h3>$499</h3>
+        <h3>{{vm.contractList[1].term}} Plan</h3>
 
-        <p>per month</p>
+        <p>$10,000 payout</p>
       </div>
 
       <div class="price-body">
-        <h4>Premium</h4>
+        <h4>Moderate</h4>
 
-        <p>Lots of clients &amp; users</p>
+        <p>Sell ${{vm.contractList[1].amount}} in premiums per year</p>
         <ul>
-          <li>2500 SKU's</li>
-          <li>5 GB Storage</li>
-          <li>1,5% transaction fee</li>
+          <li>Sell for {{vm.contractList[1].term}}s</li>
+          <li>Earn commissions on all sales!</li>
+          <li>$10K payout for loans after {{vm.contractList[1].term}}s!</li>
         </ul>
       </div>
 
       <div class="price-foot">
-        <button type="button" class="btn btn-success">Buy Now</button>
+        <button type="button" class="btn btn-primary">Accept Offer</button>
       </div>
     </li>
     <li class="unit price-warning">
       <div class="price-title">
-        <h3>$599</h3>
+        <h3>{{vm.contractList[2].term}} Plan</h3>
 
-        <p>per month</p>
+        <p>$10,000 payout</p>
       </div>
 
       <div class="price-body">
-        <h4>Unlimited</h4>
+        <h4>Steady</h4>
 
-        <p>Lots of clients &amp; users</p>
+        <p>Sell ${{vm.contractList[2].amount}} in premiums per year</p>
         <ul>
-          <li>Unlimited SKU's</li>
-          <li>20 GB Storage</li>
-          <li>1% transaction fee</li>
+          <li>Sell for {{vm.contractList[2].term}}s</li>
+          <li>Earn commissions on all sales!</li>
+          <li>$10K payout for loans after {{vm.contractList[2].term}}s!</li>
         </ul>
       </div>
 
       <div class="price-foot">
-        <button type="button" class="btn btn-warning">Subscribe</button>
+        <button type="button" class="btn btn-primary">Accept Offer</button>
       </div>
     </li>
   </ul>

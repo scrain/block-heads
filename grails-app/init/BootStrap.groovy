@@ -16,7 +16,7 @@ class BootStrap {
             description: '$55,000 premium sold for two years',
             type: 'Fixed Duration',
             amount: 55000.00,
-            term: '2 years',
+            term: '2 year',
             frequency: 'Annually',
             maxPayout: 10000.00
         ).save(failOnError:true)
@@ -26,7 +26,7 @@ class BootStrap {
             description: '$36,000 premium sold for three years',
             type: 'Fixed Duration',
             amount: 36000.00,
-            term: '3 years',
+            term: '3 year',
             frequency: 'Annually',
             maxPayout: 10000.00
         ).save(failOnError:true)
@@ -36,7 +36,7 @@ class BootStrap {
             description: '$23,000 premium sold for five years',
             type: 'Fixed Duration',
             amount: 23000.00,
-            term: '5 years',
+            term: '5 year',
             frequency: 'Annually',
             maxPayout: 10000.00
         ).save(failOnError:true)

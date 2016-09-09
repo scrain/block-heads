@@ -38,8 +38,8 @@ $pricing-radius:                  4px !default;
 
 			&.active {
 				top: 5px;
-				margin-left: -36px;
-				margin-right: -36px;
+				margin-left: -20px;
+				margin-right: -20px;
 				z-index: 1;
 				@include box-shadow($value: $pricing-shadow-active);
 
