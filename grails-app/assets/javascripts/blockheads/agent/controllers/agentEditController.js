@@ -56,7 +56,5 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
         } else {
             updateServer();
         }
-
-
     };
 }

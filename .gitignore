@@ -12,7 +12,3 @@ classes/
 .project
 .settings
 .classpath
-grails-app/assets/javascripts/blockheads/contract/services/
-src/main/webapp/
-src/test/javascripts/blockheads/contract/
-src/test/javascripts/blockheads/services/
