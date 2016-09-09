@@ -15,24 +15,17 @@
 <asset:stylesheet src="application.css"/>
 
 <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+<!-- link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css" -->
 
 <script type="text/javascript">
     window.contextPath = "${request.contextPath}";
 </script>
-<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-<!-- Bootflat's JS files.
-<script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
-<script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
-<script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
--->
-
 </head>
 
 <body ng-app="blockheads" ng-controller="IndexController as indexCtrl">
+
     <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
+        <div>
             <div class="navbar-header">
                 <font color="white">WSIFF</font>
             </div>
@@ -56,6 +49,8 @@
             </div>
         </div>
     </div>
+
+<div class="container">
 
     <!-- bread crumb -->
     <div class="row">
@@ -84,6 +79,8 @@
 </div>
 
 <div ui-view></div>
+
+    </div>
 
 <div class="footer" role="contentinfo"></div>
 
