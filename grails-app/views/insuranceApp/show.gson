@@ -1,0 +1,7 @@
+import blockheads.InsuranceApp
+
+model {
+	InsuranceApp insuranceApp
+}
+
+json tmpl.insuranceApp(insuranceApp)

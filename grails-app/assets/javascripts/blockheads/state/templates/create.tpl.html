@@ -1,0 +1,21 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="state.list" class="list">State List</a></li>
+    </ul>
+</div>
+<div id="create-state" class="content scaffold-create" role="main">
+    <h1>Create State</h1>
+    <ul class="errors" role="alert" ng-if="vm.errors">
+        <li ng-repeat="error in vm.errors">{{error.message}}</li>
+    </ul>
+
+    <form name="saveState" ng-submit="vm.saveState()">
+        <fieldset class="form">
+            <ng-include src="'/blockheads/state/form.html'"></ng-include>
+        </fieldset>
+        <fieldset class="buttons">
+            <input type="submit" name="create" class="save" value="Create" />
+        </fieldset>
+    </form>
+</div>

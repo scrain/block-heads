@@ -1,0 +1,8 @@
+import blockheads.Incentive
+
+model {
+	Iterable<Incentive> incentiveList
+}
+
+json tmpl.incentive(incentiveList ?: [])
+

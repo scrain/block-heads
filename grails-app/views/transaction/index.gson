@@ -1,0 +1,8 @@
+import blockheads.Transaction
+
+model {
+	Iterable<Transaction> transactionList
+}
+
+json tmpl.transaction(transactionList ?: [])
+

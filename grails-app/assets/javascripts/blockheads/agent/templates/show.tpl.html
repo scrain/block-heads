@@ -1,0 +1,112 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a class="list" ui-sref="agent.list" class="list">Agent List</a></li>
+        <li><a class="create" ui-sref="agent.create" class="create">New Agent</a></li>
+    </ul>
+</div>
+<div id="show-part" class="content scaffold-show" role="main">
+    <h1>Show Agent</h1>
+    <ol class="property-list agent">
+  <li class="fieldcontain">
+    <span id="username-label" class="property-label">Username</span>
+    <div class="property-value" aria-labelledby="username-label">
+      <span>{{vm.agent.username}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="password-label" class="property-label">Password</span>
+    <div class="property-value" aria-labelledby="password-label">
+      <span>{{vm.agent.password}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="firstName-label" class="property-label">First Name</span>
+    <div class="property-value" aria-labelledby="firstName-label">
+      <span>{{vm.agent.firstName}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="lastName-label" class="property-label">Last Name</span>
+    <div class="property-value" aria-labelledby="lastName-label">
+      <span>{{vm.agent.lastName}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="governmentId-label" class="property-label">Government Id</span>
+    <div class="property-value" aria-labelledby="governmentId-label">
+      <span>{{vm.agent.governmentId}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="birthday-label" class="property-label">Birthday</span>
+    <div class="property-value" aria-labelledby="birthday-label">
+      <span>{{vm.agent.birthday | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="email-label" class="property-label">Email</span>
+    <div class="property-value" aria-labelledby="email-label">
+      <span>{{vm.agent.email}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="trainingStatus-label" class="property-label">Training Status</span>
+    <div class="property-value" aria-labelledby="trainingStatus-label">
+      <span>{{vm.agent.trainingStatus}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="address1-label" class="property-label">Address1</span>
+    <div class="property-value" aria-labelledby="address1-label">
+      <span>{{vm.agent.address1}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="address2-label" class="property-label">Address2</span>
+    <div class="property-value" aria-labelledby="address2-label">
+      <span>{{vm.agent.address2}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="city-label" class="property-label">City</span>
+    <div class="property-value" aria-labelledby="city-label">
+      <span>{{vm.agent.city}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="state-label" class="property-label">State</span>
+    <div class="property-value" aria-labelledby="state-label">
+      <a ui-sref="state.show({id: vm.agent.state.id})">{{vm.agent.state.toString()}}</a>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="zip-label" class="property-label">Zip</span>
+    <div class="property-value" aria-labelledby="zip-label">
+      <span>{{vm.agent.zip}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="agentId-label" class="property-label">Agent Id</span>
+    <div class="property-value" aria-labelledby="agentId-label">
+      <span>{{vm.agent.agentId}}</span>
+    </div>
+  </li>
+  <li class="fieldcontain">
+    <span id="licenseStates-label" class="property-label">License States</span>
+    <div class="property-value" aria-labelledby="licenseStates-label">
+      <ul>
+        <li ng-repeat="state in vm.agent.licenseStates">
+          <a ui-sref="state.show({id: state.id})">{{state.toString()}}</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ol>
+    <form ng-submit="vm.delete()">
+        <fieldset class="buttons">
+            <a class="edit" ui-sref="agent.edit({id: vm.agent.id})">Edit</a>
+            <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
+        </fieldset>
+    </form>
+</div>

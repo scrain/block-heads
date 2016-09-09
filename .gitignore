@@ -1,3 +1,5 @@
+Thumbs.db
+.DS_Store
 .gradle/
 .idea/
 build/
@@ -6,4 +8,6 @@ out/
 *.iml
 *.ipr
 *.iws
-classes
+.project
+.settings
+.classpath

@@ -1,0 +1,7 @@
+import blockheads.Contract
+
+model {
+	Contract contract
+}
+
+json tmpl.contract(contract)

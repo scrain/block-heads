@@ -1,0 +1,8 @@
+import blockheads.Contract
+
+model {
+	Iterable<Contract> contractList
+}
+
+json tmpl.contract(contractList ?: [])
+
