@@ -27,7 +27,7 @@ class InsuranceApp {
         premium min: 0.0
 
         agentId blank: false
-        planType blank: false, inList: ['Term', 'foo']
+        planType blank: false, inList: ['10 Year Term', '20 Year Term', '30 Year Term','Universal Life', 'Whole Life']
         insuredName blank: false
         status blank: false, inList: ['pending', 'issued', 'declined']
 
