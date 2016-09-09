@@ -76,4 +76,8 @@
             </div>
         </div>
     </div>
+    <div class="fieldcontain">
+        <label for="contract">Contract</label>
+        <select name="contract" id="contract" ng-model="vm.agent.contract" ng-options="contract for contract in vm.contractList track by contract.id"></select>
+    </div>
 </fieldset>

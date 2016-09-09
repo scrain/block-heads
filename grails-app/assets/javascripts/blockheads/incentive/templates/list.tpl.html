@@ -9,7 +9,6 @@
     <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Name</th>
       <th>Reward</th>
       <th>Description</th>
@@ -21,10 +20,7 @@
   <tbody>
     <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="incentive in vm.incentiveList">
       <td>
-        <a ui-sref="incentive.show({id: incentive.id})">{{incentive.id}}</a>
-      </td>
-      <td>
-        <span>{{incentive.name}}</span>
+        <a ui-sref="incentive.show({id: incentive.id})">{{incentive.name}}</a>
       </td>
       <td>
         <span>{{incentive.reward}}</span>

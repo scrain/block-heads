@@ -9,7 +9,6 @@
     <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Number</th>
       <th>Face Amount</th>
       <th>Premium</th>
@@ -21,10 +20,7 @@
   <tbody>
     <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="insuranceApp in vm.insuranceAppList">
       <td>
-        <a ui-sref="insuranceApp.show({id: insuranceApp.id})">{{insuranceApp.id}}</a>
-      </td>
-      <td>
-        <span>{{insuranceApp.number}}</span>
+        <a ui-sref="insuranceApp.show({id: insuranceApp.id})">{{insuranceApp.number}}</a>
       </td>
       <td>
         <span>{{insuranceApp.faceAmount}}</span>

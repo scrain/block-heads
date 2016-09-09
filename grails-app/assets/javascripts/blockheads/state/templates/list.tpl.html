@@ -9,17 +9,13 @@
     <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Name</th>
     </tr>
   </thead>
   <tbody>
     <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="state in vm.stateList">
       <td>
-        <a ui-sref="state.show({id: state.id})">{{state.id}}</a>
-      </td>
-      <td>
-        <span>{{state.name}}</span>
+        <a ui-sref="state.show({id: state.id})">{{state.name}}</a>
       </td>
     </tr>
   </tbody>
