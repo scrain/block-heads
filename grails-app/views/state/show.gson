@@ -1,0 +1,7 @@
+import blockheads.State
+
+model {
+	State state
+}
+
+json tmpl.state(state)

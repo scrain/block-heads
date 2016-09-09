@@ -1,0 +1,8 @@
+import blockheads.State
+
+model {
+	Iterable<State> stateList
+}
+
+json tmpl.state(stateList ?: [])
+

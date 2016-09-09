@@ -1,0 +1,8 @@
+import blockheads.Agent
+
+model {
+	Iterable<Agent> agentList
+}
+
+json tmpl.agent(agentList ?: [])
+

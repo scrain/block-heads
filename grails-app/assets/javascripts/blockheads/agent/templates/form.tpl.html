@@ -1,0 +1,92 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="username">Username
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="username" id="username" ng-model="vm.agent.username" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="password">Password
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="password" id="password" ng-model="vm.agent.password" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="firstName">First Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="firstName" id="firstName" ng-model="vm.agent.firstName" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="lastName">Last Name
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="lastName" id="lastName" ng-model="vm.agent.lastName" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="governmentId">Government Id
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="governmentId" id="governmentId" ng-model="vm.agent.governmentId" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="birthday">Birthday
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="birthday" id="birthday" ng-model="vm.agent.birthday" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="email">Email
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="email" id="email" ng-model="vm.agent.email" type="email" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="trainingStatus">Training Status
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="trainingStatus" id="trainingStatus" ng-model="vm.agent.trainingStatus">
+      <option value="not started">not started</option>
+      <option value="in progress">in progress</option>
+      <option value="complete">complete</option>
+    </select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="address1">Address1
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="address1" id="address1" ng-model="vm.agent.address1" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="address2">Address2
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="address2" id="address2" ng-model="vm.agent.address2" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="city">City
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="city" id="city" ng-model="vm.agent.city" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="state">State
+      <span class="required-indicator">*</span>
+    </label>
+    <select required="" name="state" id="state" ng-model="vm.agent.state" ng-options="state for state in vm.stateList track by state.id"></select>
+  </div>
+  <div class="fieldcontain required">
+    <label for="zip">Zip
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="zip" id="zip" ng-model="vm.agent.zip" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="agentId">Agent Id</label>
+    <input name="agentId" id="agentId" ng-model="vm.agent.agentId" type="text" />
+  </div>
+  <div class="fieldcontain">
+    <label for="licenseStates">License States</label>
+    <select name="licenseStates" id="licenseStates" ng-model="vm.agent.licenseStates" ng-options="state for state in vm.stateList track by state.id" multiple=""></select>
+  </div>
+</fieldset>

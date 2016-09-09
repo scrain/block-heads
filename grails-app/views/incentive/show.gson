@@ -1,0 +1,7 @@
+import blockheads.Incentive
+
+model {
+	Incentive incentive
+}
+
+json tmpl.incentive(incentive)

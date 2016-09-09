@@ -1,0 +1,7 @@
+import blockheads.Transaction
+
+model {
+	Transaction transaction
+}
+
+json g.render(transaction)

@@ -1,0 +1,7 @@
+import blockheads.Agent
+
+model {
+	Agent agent
+}
+
+json tmpl.agent(agent)

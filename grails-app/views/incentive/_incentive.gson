@@ -1,0 +1,7 @@
+import blockheads.Incentive
+
+model {
+	Incentive incentive
+}
+
+json g.render(incentive)
