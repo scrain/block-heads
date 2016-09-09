@@ -1,5 +1,4 @@
 //= wrapped
-//= require /bootflat/jquery-1.10.1.min
 //= require /bootflat/icheck.min
 //= require /bootflat/jquery.fs.selecter.min
 //= require /bootflat/jquery.fs.stepper.min

@@ -4,4 +4,4 @@ model {
 	Agent agent
 }
 
-json g.render(agent)
+json g.render(agent, [expand: ['contract']])

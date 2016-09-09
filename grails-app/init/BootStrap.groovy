@@ -104,6 +104,7 @@ class BootStrap {
             agentId: '123456',
             licenseStates: stateMO,
             contract: fiftyFiveKTwoYears,
+            contractAddress: '21234124124',
             incentives: [],
             transactions: []
         ).save(failOnError:true)
@@ -124,6 +125,7 @@ class BootStrap {
             agentId: '67732',
             licenseStates: stateMO,
             contract: twentyThreeKFiveYears,
+            contractAddress: '21234124124',
             incentives: [],
             transactions: []
         ).save(failOnError:true)
@@ -144,8 +146,28 @@ class BootStrap {
             agentId: '97744',
             licenseStates: stateMO,
             contract: thirtySixKThreeYears,
+            contractAddress: '21234124124',
             incentives: [],
             transactions: []
+        ).save(failOnError:true)
+
+        def freshman = new Agent(
+                username: 'skippy',
+                password: 'demo',
+                firstName: 'Skip',
+                lastName: 'Johnson',
+                governmentId: '123-45-6789',
+                birthday: new Date(),
+                email: 'skippy@gmail.com',
+                trainingStatus: 'complete',
+                address1: '21 Jump Street',
+                city: 'Chesterfield',
+                state: stateMO,
+                zip: '62294',
+                agentId: '123456',
+                licenseStates: stateMO,
+                incentives: [],
+                transactions: []
         ).save(failOnError:true)
 
         new Incentive(name:'Xbox Xtravaganza!!!', reward:'Xbox', description:'blah', type: 'foo', amount: 1000.00, term: '1 month').save(failOnError:true)
