@@ -17,7 +17,8 @@ function Incentive($resource) {
     Incentive.list = Incentive.query;
 
     Incentive.prototype.toString = function() {
-        return 'blockheads.Incentive : ' + (this.id ? this.id : '(unsaved)');
+        // return 'blockheads.Incentive : ' + (this.id ? this.id : '(unsaved)');
+        return this.name;
     };
 
     return Incentive;

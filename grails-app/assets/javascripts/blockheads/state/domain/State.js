@@ -17,7 +17,8 @@ function State($resource) {
     State.list = State.query;
 
     State.prototype.toString = function() {
-        return 'blockheads.State : ' + (this.id ? this.id : '(unsaved)');
+        // return 'blockheads.State : ' + (this.id ? this.id : '(unsaved)');
+        return this.name;
     };
 
     return State;

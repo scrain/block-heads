@@ -1,5 +1,6 @@
 //= wrapped
 //= require /angular/angular
+//= require_tree /bootflat
 //= require /blockheads/core/blockheads.core
 //= require /blockheads/index/blockheads.index
 //= require /blockheads/agent/blockheads.agent
