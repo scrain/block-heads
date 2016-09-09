@@ -10,6 +10,7 @@ $prefix-moz:                  true !global;
 $prefix-spec:                 true !global;
 
 // color elements
+
 $white:                       #FFF !default;
 $black:                       #000 !default;
 
@@ -48,6 +49,13 @@ $mediumgray-light:            #CCD1D9 !default;
 
 $darkgray-dark:               #434A54 !default;
 $darkgray-light:              #656D78 !default;
+
+$theme-color-light:           $bluejeans-light !default;
+$theme-color-dark:            $bluejeans-dark !default;
+$secondary-color-light:       $grapefruit-light !default;
+$secondary-color-dark:        $grapefruit-dark !default;
+$tertiary-color-light:        $mint-light !default;
+$tertiary-color-dark:         $mint-dark !default;
 
 // Global Mixins
 //------------------------------------------------------

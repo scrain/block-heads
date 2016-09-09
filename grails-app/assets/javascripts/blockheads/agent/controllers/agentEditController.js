@@ -4,7 +4,7 @@ angular
     .module("blockheads.agent")
     .controller("AgentEditController", AgentEditController);
 
-function AgentEditController(Agent, $stateParams, $state, State, Contract, Incentive, Transaction) {
+function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, Incentive, Transaction, contractService) {
     var vm = this;
 
     vm.stateList = State.list();
@@ -20,15 +20,43 @@ function AgentEditController(Agent, $stateParams, $state, State, Contract, Incen
 
     vm.updateAgent = function() {
         vm.errors = undefined;
-        vm.agent.$update(function() {
-            $state.go('agent.show', {id: vm.agent.id});
-        }, function(response) {
-            var data = response.data;
-            if (data.hasOwnProperty('message')) {
-                vm.errors = [data];
-            } else {
-                vm.errors = data._embedded.errors;
+        var updateServer  = function(contract) {
+            if (contract && contract.name != 'none') {
+                vm.agent.contractAddress = contract.address;
             }
-        });
+            vm.agent.$update(function() {
+                $state.go('agent.show', {id: vm.agent.id});
+            }, function(response) {
+                var data = response.data;
+                if (data.hasOwnProperty('message')) {
+                    vm.errors = [data];
+                } else {
+                    vm.errors = data._embedded.errors;
+                }
+            });
+        };
+
+        var transactionCompleteCb = function(err, myContract){
+            if(!err) {
+                if(myContract.address) {
+                    console.log('address ='+ myContract.address) // the contract address
+                    vm.agent.contractAddress = myContract.address;
+                    updateServer();
+                } else {
+                    console.log(myContract.transactionHash) // The hash of the transaction, which deploys the contract
+                }
+            } else {
+                console.log(err);
+            }
+        };
+
+        if (vm.agent.contract && !vm.agent.contractAddress) {
+            // create new blockchain contract
+            contractService.createAgentOffer(vm.agent.contract, transactionCompleteCb);
+        } else {
+            updateServer();
+        }
+
+
     };
 }

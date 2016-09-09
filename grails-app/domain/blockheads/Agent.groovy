@@ -69,11 +69,5 @@ class Agent {
         incentives()
     }
 
-    public void setContract( Object contract ) {
-        if ( contract?.id ) {
-            this.contract = contract
-        }
-    }
-
-
+    static fetchMode = [contract: 'eager']
 }
