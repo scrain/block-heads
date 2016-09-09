@@ -77,8 +77,8 @@ class BootStrap {
             frequency: 'Annually',
             maxPayout: 10000.00
         ).save(failOnError:true)
-		
-		Contract twentyThreeKFiveYears = new Contract(
+
+        Contract twentyThreeKFiveYears = new Contract(
             name: '23K for five years',
             description: '$23,000 premium sold for five years',
             type: 'Fixed Duration',
@@ -88,7 +88,17 @@ class BootStrap {
             maxPayout: 10000.00
         ).save(failOnError:true)
 
-		def jdoe = new Agent(
+        Contract none = new Contract(
+            name: 'none',
+            description: 'none',
+            type: 'Fixed Duration',
+            amount: 0.00,
+            term: '5 year',
+            frequency: 'Annually',
+            maxPayout: 0.0
+        ).save(failOnError:true)
+
+        def jdoe = new Agent(
             username: 'jdoe',
             password: 'demo',
             firstName: 'John',
