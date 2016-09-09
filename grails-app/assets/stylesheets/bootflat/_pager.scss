@@ -1,10 +1,11 @@
 // Variables
 //------------------------------------------------------
-$paper-background-color:                  $grass-dark !default;
-$paper-background-color-hover:            $grass-light !default;
+$paper-background-color:                  $theme-color-dark !default;
+$paper-background-color-hover:            $theme-color-light !default;
 
 $paper-font-color:                        $white !default;
-$paper-font-color-disabled:               $lightgray-dark !default;
+$paper-font-color-disabled:               $white !default;
+$paper-background-color-disabled:         $mediumgray-light !default;
 
 // Exports
 //------------------------------------------------------
@@ -33,7 +34,7 @@ $paper-font-color-disabled:               $lightgray-dark !default;
     & .disabled > a:focus,
     & .disabled > span {
       color: $paper-font-color-disabled;
-      background-color: $paper-font-color;
+      background-color: $paper-background-color-disabled;
       border-color: $paper-font-color-disabled;
     }
   }
