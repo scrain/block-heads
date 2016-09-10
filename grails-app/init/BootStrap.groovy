@@ -290,11 +290,11 @@ class BootStrap {
         def insApp_977443_9087N3409 = new InsuranceApp(
             number: '9087N3409',
             faceAmount: 500000.00,
-            premium: 420.00,
+            premium: 1420.00,
             agentId: '977443',
             planType: '20 Year Term',
             insuredName: 'Roger Foster',
-            status: 'pending'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_677325_854662920N = new InsuranceApp(
             number: '854662920N',
@@ -346,7 +346,7 @@ class BootStrap {
         def insApp_977443_187206691 = new InsuranceApp(
             number: '187206691',
             faceAmount: 500000.00,
-            premium: 420.00,
+            premium: 1420.00,
             agentId: '977443',
             planType: '20 Year Term',
             insuredName: 'Christina Smith',
@@ -713,7 +713,7 @@ class BootStrap {
             agentId: '977443',
             planType: '20 Year Term',
             insuredName: 'Amanda Miller',
-            status: 'pending'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_677325_706357237 = new InsuranceApp(
             number: '706357237',
@@ -770,7 +770,7 @@ class BootStrap {
             agentId: '977443',
             planType: '20 Year Term',
             insuredName: 'Lois Jackson',
-            status: 'declined'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_123456_131598559 = new InsuranceApp(
             number: '131598559',
@@ -854,7 +854,7 @@ class BootStrap {
             agentId: '977443',
             planType: '20 Year Term',
             insuredName: 'Christopher Mitchell',
-            status: 'declined'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_677325_836709292 = new InsuranceApp(
             number: '836709292',
@@ -956,7 +956,7 @@ class BootStrap {
             agentId: '977443',
             planType: 'Universal Life',
             insuredName: 'Larry Lopez',
-            status: 'pending'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_677325_984060487 = new InsuranceApp(
             number: '984060487',
@@ -1094,7 +1094,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_9087N3409 = new Transaction(
             applicationNumber: '9087N3409',
-            status: 'cancelled',
+            status: 'complete',
             faceAmount: 500000.00,
             premium: 420.00
         ).save(failOnError:true)
@@ -1130,7 +1130,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_187206691 = new Transaction(
             applicationNumber: '187206691',
-            status: 'cancelled',
+            status: 'complete',
             faceAmount: 500000.00,
             premium: 420.00
         ).save(failOnError:true)
@@ -1184,7 +1184,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_920641311 = new Transaction(
             applicationNumber: '920641311',
-            status: 'cancelled',
+            status: 'complete',
             faceAmount: 500000.00,
             premium: 420.00
         ).save(failOnError:true)
@@ -1250,7 +1250,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_553862369 = new Transaction(
             applicationNumber: '553862369',
-            status: 'pending',
+            status: 'complete',
             faceAmount: 250000.00,
             premium: 624.00
         ).save(failOnError:true)
@@ -1310,7 +1310,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_144849956 = new Transaction(
             applicationNumber: '144849956',
-            status: 'pending',
+            status: 'complete',
             faceAmount: 500000.00,
             premium: 420.00
         ).save(failOnError:true)
@@ -1340,7 +1340,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_976997505 = new Transaction(
             applicationNumber: '976997505',
-            status: 'cancelled',
+            status: 'complete',
             faceAmount: 250000.00,
             premium: 624.00
         ).save(failOnError:true)
@@ -1364,7 +1364,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_959609105 = new Transaction(
             applicationNumber: '959609105',
-            status: 'pending',
+            status: 'complete',
             faceAmount: 500000.00,
             premium: 420.00
         ).save(failOnError:true)
@@ -1400,7 +1400,7 @@ class BootStrap {
         ).save(failOnError:true)
         def trans_977443_513564486 = new Transaction(
             applicationNumber: '513564486',
-            status: 'cancelled',
+            status: 'complete',
             faceAmount: 500000.00,
             premium: 420.00
         ).save(failOnError:true)

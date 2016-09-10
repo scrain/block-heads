@@ -44,7 +44,7 @@ class Agent {
     ]
 
     static constraints = {
-        email       unique: true, blank: false, email: true
+        email       unique: false, blank: false, email: true
         password    blank: false
 
         firstName       nullable: true
