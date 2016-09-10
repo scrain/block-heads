@@ -1,51 +1,56 @@
+<!--<div class="svg" role="presentation">-->
+<!--<div class="grails-logo-container">-->
+<!--<image src="/assets/grails-cupsonly-logo-white.svg" class="grails-logo"/>-->
+<!--</div>-->
+<!--</div>-->
+
 <div id="content" role="main">
-    <h1>Welcome to WSIFF</h1>
+    <section class="row colset-2-its">
+        <h1>Welcome to WSIFF</h1>
 
-    <!-- carousel -->
-    <!--<div class="row">-->
-        <!--<div class="col-md-6">-->
-            <!--<div class="jumbotron">-->
-                <!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
-                    <!--<ol class="carousel-indicators">-->
-                        <!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
-                        <!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
-                        <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
-                    <!--</ol>-->
-                    <!--<div class="carousel-inner">-->
-                        <!--<div class="item active"><img src="assets/piggy-bank-01.jpg"/></div>-->
-                        <!--<div class="item"><img src="assets/no-plan.jpg"/></div>-->
-                        <!--<div class="item"><img src="assets/worry-bench.jpg"/></div>-->
-                    <!--</div>-->
-                    <!--<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">-->
-                        <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
-                    <!--</a>-->
-                    <!--<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">-->
-                        <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-6">-->
-            <!--<div class="jumbotron-contents">-->
-                <!--<h2>New Users</h2>-->
-                <!--<p><a class="list" ui-sref="agent.create">Sign up here</a></p>-->
+        <!-- jumbotron carousel -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active"><img src="assets/piggy-bank-01.jpg" /></div>
+                            <div class="item"><img src="assets/no-plan.jpg" /></div>
+                            <div class="item"><img src="assets/worry-bench.jpg" /></div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                    <div class="jumbotron-contents">
+                        <h2>New Users</h2>
+                        <p><a class="list" ui-sref="agent.create">Sign up here</a></p>
 
-                <!--<a ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')" ui-sref="{{c.logicalPropertyName}}.list">{{c.name}}</a>-->
-                <!--<h2>Existing Agents</h2>-->
-                <!--<p>Login</p>-->
-            <!--</div>-->
-        <!--</div>-->
+                        <a ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')" ui-sref="{{c.logicalPropertyName}}.list">{{c.name}}</a>
 
-    <!--</div>-->
+                        <h2>Existing Agents</h2>
+                        <p><a class="list" ui-sref="agent.login">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-    <div id="controllers" role="navigation">
-        <h2>Available Controllers:</h2>
-        <ul ng-cloak>
-            <li ng-repeat="c in indexCtrl.applicationData.controllers | orderBy:'name'" class="controller">
-                <a ng-if="!indexCtrl.stateExists(c.logicalPropertyName+'.list')" ng-href="{{indexCtrl.contextPath}}/{{c.logicalPropertyName}}">{{c.name}}</a>
-                <a ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')" ui-sref="{{c.logicalPropertyName}}.list">{{c.name}}</a>
-            </li>
-        </ul>
-    </div>
+        <div id="controllers" role="navigation">
+            <h2>Available Controllers:</h2>
+            <ul ng-cloak>
+                <li ng-repeat="c in indexCtrl.applicationData.controllers | orderBy:'name'" class="controller">
+                    <a ng-if="!indexCtrl.stateExists(c.logicalPropertyName+'.list')" ng-href="{{indexCtrl.contextPath}}/{{c.logicalPropertyName}}">{{c.name}}</a>
+                    <a ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')" ui-sref="{{c.logicalPropertyName}}.list">{{c.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 </div>
