@@ -5,7 +5,6 @@
             <li class="unit price-primary">
                 <div class="price-title">
                     <h3>{{vm.contractList[0].term}} Plan</h3>
-
                     <p>${{vm.contractList[0].maxPayout/1000}}K payout</p>
                 </div>
 
@@ -21,7 +20,6 @@
                 </div>
 
                 <div class="price-foot">
-                    <!--<button type="button" class="btn btn-primary">Accept Offer</button>-->
                     <label class="toggle">
                         <input name="contract" type="radio" ng-model="vm.agent.contract" ng-value="vm.contractList[0]" />
                         <span class="handle"></span>
@@ -47,7 +45,6 @@
                 </div>
 
                 <div class="price-foot">
-                    <!--<button type="button" class="btn btn-primary">Accept Offer</button>-->
                     <label class="toggle">
                         <input name="contract" type="radio" ng-model="vm.agent.contract" ng-value="vm.contractList[1]" />
                         <span class="handle"></span>
@@ -73,7 +70,6 @@
                 </div>
 
                 <div class="price-foot">
-                    <!--<button type="button" class="btn btn-primary">Accept Offer</button>-->
                     <label class="toggle">
                         <input name="contract" type="radio" ng-model="vm.agent.contract" ng-value="vm.contractList[2]" />
                         <span class="handle"></span>
@@ -82,106 +78,4 @@
             </li>
         </ul>
     </div>
-
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="email">Email-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="email" id="email" ng-model="vm.agent.email" type="email" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="password">Password-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="password" id="password" ng-model="vm.agent.password" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="firstName">First Name-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="firstName" id="firstName" ng-model="vm.agent.firstName" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="lastName">Last Name-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="lastName" id="lastName" ng-model="vm.agent.lastName" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="governmentId">Government Id-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="governmentId" id="governmentId" ng-model="vm.agent.governmentId" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="birthday">Birthday-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="birthday" id="birthday" ng-model="vm.agent.birthday" type="date" placeholder="YYYY-MM-DD" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="trainingStatus">Training Status-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<select required="" name="trainingStatus" id="trainingStatus" ng-model="vm.agent.trainingStatus">-->
-    <!--<option value="not started">not started</option>-->
-    <!--<option value="in progress">in progress</option>-->
-    <!--<option value="complete">complete</option>-->
-    <!--</select>-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="address1">Address1-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="address1" id="address1" ng-model="vm.agent.address1" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="address2">Address2-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="address2" id="address2" ng-model="vm.agent.address2" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="city">City-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="city" id="city" ng-model="vm.agent.city" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="state">State-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<select required="" name="state" id="state" ng-model="vm.agent.state" ng-options="state for state in vm.stateList track by state.id"></select>-->
-    <!--</div>-->
-    <!--<div class="fieldcontain required">-->
-    <!--<label for="zip">Zip-->
-    <!--<span class="required-indicator">*</span>-->
-    <!--</label>-->
-    <!--<input required="" name="zip" id="zip" ng-model="vm.agent.zip" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain">-->
-    <!--<label for="agentId">Agent Id</label>-->
-    <!--<input name="agentId" id="agentId" ng-model="vm.agent.agentId" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain">-->
-    <!--<label for="licenseStates">License States</label>-->
-    <!--<select name="licenseStates" id="licenseStates" ng-model="vm.agent.licenseStates" ng-options="state for state in vm.stateList track by state.id" multiple=""></select>-->
-    <!--</div>-->
-    <!--<div class="fieldcontain">-->
-    <!--<label for="contract">Contract</label>-->
-    <!--<select name="contract" id="contract" ng-model="vm.agent.contract" ng-options="contract for contract in vm.contractList track by contract.id"></select>-->
-    <!--</div>-->
-    <!--<div class="fieldcontain">-->
-    <!--<label for="contractAddress">Contract Address</label>-->
-    <!--<input name="contractAddress" id="contractAddress" ng-model="vm.agent.contractAddress" type="text" class="form-control" />-->
-    <!--</div>-->
-    <!--<div class="fieldcontain">-->
-    <!--<label for="incentives">Incentives</label>-->
-    <!--<select name="incentives" id="incentives" ng-model="vm.agent.incentives" ng-options="incentive for incentive in vm.incentiveList track by incentive.id" multiple=""></select>-->
-    <!--</div>-->
-    <!--<div class="fieldcontain">-->
-    <!--<label for="transactions">Transactions</label>-->
-    <!--<select name="transactions" id="transactions" ng-model="vm.agent.transactions" ng-options="transaction for transaction in vm.transactionList track by transaction.id" multiple=""></select>-->
-    <!--</div>-->
-
 </fieldset>
