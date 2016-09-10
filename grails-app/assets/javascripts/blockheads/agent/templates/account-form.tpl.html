@@ -1,32 +1,22 @@
 <fieldset class="form">
     <div class="row">
-        <div class="col-md-6 fieldcontain required">
-            <label for="username">Username
-                <span class="required-indicator">*</span>
-            </label>
-            <input required="" name="username" id="username" ng-model="vm.agent.username" type="text" class="form-control"/>
+        <div class="col-md-12 fieldcontain required">
+            <input placeholder="username" required="" name="username" id="username" ng-model="vm.agent.username" type="text" class="form-control"/>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 fieldcontain required">
-            <label for="email">Email
-                <span class="required-indicator">*</span>
-            </label>
-            <input required="" name="email" id="email" ng-model="vm.agent.email" type="email" class="form-control" />
+            <input placeholder="email" required="" name="email" id="email" ng-model="vm.agent.email" type="email" class="form-control" />
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 fieldcontain required">
-            <label for="password">Password
-                <span class="required-indicator">*</span>
-            </label>
-            <input required="" name="password" id="password" ng-model="vm.agent.password" type="password" class="form-control"/>
+        <div class="col-md-12 fieldcontain required">
+            <input placeholder="password" required="" name="password" id="password" ng-model="vm.agent.password" type="password" class="form-control"/>
         </div>
-        <div class="col-md-6 fieldcontain required">
-            <label for="password">Confirm
-                <span class="required-indicator">*</span>
-            </label>
-            <input required="" name="confirm" id="confirm" type="password" class="form-control"/>
+    </div>
+    <div class="row">
+        <div class="col-md-12 fieldcontain required">
+            <input placeholder="confirm" required="" name="confirm" id="confirm" type="password" class="form-control"/>
         </div>
     </div>
 </fieldset>
