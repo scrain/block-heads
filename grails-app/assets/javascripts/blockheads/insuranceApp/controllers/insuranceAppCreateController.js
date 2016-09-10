@@ -4,7 +4,7 @@ angular
     .module("blockheads.insuranceApp")
     .controller("InsuranceAppCreateController", InsuranceAppCreateController);
 
-function InsuranceAppCreateController(InsuranceApp, $state, $filter) {
+function InsuranceAppCreateController(InsuranceApp, $state, contractService) {
     function getRandomArbitrary(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);

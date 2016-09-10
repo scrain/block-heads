@@ -41,6 +41,11 @@ function config($stateProvider) {
             templateUrl: "/blockheads/agent/create.html",         // create account (step 1)
             controller: "AgentCreateController as vm"
         })
+        .state('agent.login', {
+            url: "/login",
+            templateUrl: "/blockheads/agent/login.html",
+            controller: "AgentLoginController as vm"
+        })
         .state('agent.edit', {
             url: "/edit/:id",
             templateUrl: "/blockheads/agent/edit.html",           // enter personal info (step 2)

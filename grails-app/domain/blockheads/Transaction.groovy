@@ -9,6 +9,7 @@ import groovy.transform.Sortable
 class Transaction {
     String status
 
+    String contractNumber
     BigDecimal faceAmount
     BigDecimal premium
 
@@ -16,6 +17,7 @@ class Transaction {
     Date lastUpdated
 
     static constraints = {
+        contractNumber nullable: false
         status      inList: ['pending', 'complete', 'cancelled']
         faceAmount  min: 0.0
         premium     min: 0.0
