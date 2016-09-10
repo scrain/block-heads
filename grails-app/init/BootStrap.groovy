@@ -434,7 +434,7 @@ class BootStrap {
             agentId: '977443',
             planType: '20 Year Term',
             insuredName: 'Judy Powell',
-            status: 'declined'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_677325_644269829 = new InsuranceApp(
             number: '644269829',
@@ -536,7 +536,7 @@ class BootStrap {
             agentId: '977443',
             planType: 'Universal Life',
             insuredName: 'Martha Cox',
-            status: 'pending'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_677325_900653645 = new InsuranceApp(
             number: '900653645',
@@ -677,7 +677,7 @@ class BootStrap {
             agentId: '977443',
             planType: 'Universal Life',
             insuredName: 'Jason Sanders',
-            status: 'declined'
+            status: 'issued'
         ).save(failOnError:true)
         def insApp_677325_388931298 = new InsuranceApp(
             number: '388931298',
