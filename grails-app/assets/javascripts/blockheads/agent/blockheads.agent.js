@@ -56,6 +56,11 @@ function config($stateProvider) {
             templateUrl: "/blockheads/agent/select-contract.html", // select contract (step 3)
             controller: "AgentEditController as vm"
         })
+        .state('agent.complete', {
+            url: "/complete/:id",
+            templateUrl: "/blockheads/agent/complete.html", // registration complete (step 4)
+            controller: "AgentEditController as vm"
+        })
         .state('agent.show', {
             url: "/show/:id",
             templateUrl: "/blockheads/agent/show.html",

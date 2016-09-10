@@ -47,7 +47,7 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
 
         var updateServer  = function(contract) {
             vm.agent.$update(function() {
-                $state.go('agent.show', {id: vm.agent.id});
+                $state.go('agent.complete', {id: vm.agent.id});
             }, function(response) {
                 var data = response.data;
                 if (data.hasOwnProperty('message')) {

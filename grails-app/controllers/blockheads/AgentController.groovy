@@ -70,13 +70,13 @@ class AgentController {
 
         if (agent.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond agent.errors, view:'edit'
+            respond agent.errors, view:'select-contract'
             return
         }
 
         agent.save flush:true
 
-        respond agent, [status: OK, view:"show"] // step 3 to show agent
+        respond agent, [status: OK, view:"complete"] // step 3 to show agent
     }
 
 
