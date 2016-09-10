@@ -4,7 +4,7 @@ $progress-primary:                 $tan-scheme-light !default;
 $progress-success:                 $tan-scheme-color-dark !default;
 $progress-danger:                  $grapefruit-dark !default;
 $progress-warning:                 $tan-scheme-light !default;
-$progress-info:                    $mint-dark !default;
+$progress-info:                    $tan-scheme-color2-dark !default;
 
 $progress-background-color:        $lightgray-dark !default;
 
@@ -17,24 +17,39 @@ $progress-background-color:        $lightgray-dark !default;
    * --------------------------------------------------
    */
   .progress {
+     height: 30px;
+
       background-color: $progress-background-color;
+
       @include box-shadow($value: none);
 
       &-bar {
         background-color: $progress-primary;
         @include box-shadow($value: none);
+        font-size: 15px;
+        line-height: 30px;
       }
       &-bar-success {
         background-color: $progress-success;
+        font-size: 15px;
+        line-height: 30px;
       }
       &-bar-info {
         background-color: $progress-info;
+        font-size: 15px;
+        line-height: 30px;
+        color: #000;
       }
       &-bar-warning {
         background-color: $progress-warning;
+        font-size: 15px;
+        line-height: 30px;
+        color: #000;
       }
       &-bar-danger {
         background-color: $progress-danger;
+        font-size: 15px;
+        line-height: 30px;
       }
   }
 }

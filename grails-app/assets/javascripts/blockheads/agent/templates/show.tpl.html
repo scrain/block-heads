@@ -6,7 +6,138 @@
     </ul>
 </div>
 <div id="show-part" class="content scaffold-show" role="main">
-    <h1>Show Agent</h1>
+    <h1>My Account</h1>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4">
+            <font size="4">Goal: $36,000 premium sold for 3 years</font>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+            <div class="col-md-4">
+                <font size="4">Payout: $10,000</font>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Current Period Progress</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <font size="4">Time Remaining</font>
+        </div>
+        <div class="col-md-6">
+            <!-- progress bar -->
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" style="width: 75%">9 months completed</div>
+                <div class="progress-bar progress-bar-warning" style="width: 25%">3 months to go</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <font size="4">Progress Toward Sales Goal</font>
+        </div>
+        <div class="col-md-6">
+            <!-- progress bar -->
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" style="width: 69.4%">$25K Sold</div>
+                <div class="progress-bar progress-bar-info" style="width: 16.7%">$6K Pending</div>
+                <div class="progress-bar progress-bar-warning" style="width: 13.9%">$5K to go!</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Overall Offer Status</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <font size="4">Total Contract Length: 3 years</font>
+        </div>
+        <div class="col-md-6">
+            <!-- progress bar -->
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" style="width: 25%">9 months completed</div>
+                <div class="progress-bar progress-bar-warning" style="width: 75%">2 years, 3 months to go</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Recent Activity</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table style="width:100%">
+                <tr>
+                    <th>Date</th>
+                    <th>Policy Number</th>
+                    <th>Premium</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>9/7/2016</td>
+                    <td>26783455R</td>
+                    <td>$888.00</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" style="width: 100%">Pending</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9/6/2016</td>
+                    <td>34462810S</td>
+                    <td>$420.00</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" style="width: 100%">Issued</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9/2/2016</td>
+                    <td>7S018309U</td>
+                    <td>$672.53</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" style="width: 100%">Issued</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8/25/2016</td>
+                    <td>7S018309U</td>
+                    <td>$672.53</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" style="width: 100%">Pending</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8/22/2016</td>
+                    <td>34462810S</td>
+                    <td>$420.00</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" style="width: 100%">Pending</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--
     <ol class="property-list agent">
   <li class="fieldcontain">
     <span id="username-label" class="property-label">Username</span>
@@ -140,5 +271,5 @@
             <a class="edit" ui-sref="agent.edit({id: vm.agent.id})">Edit</a>
             <input class="delete" type="submit" value="Delete" onclick="return confirm('Are you sure?');" />
         </fieldset>
-    </form>
+    </form>-->
 </div>
