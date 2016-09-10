@@ -42,7 +42,7 @@ class Agent {
     ]
 
     static constraints = {
-        username blank: false, unique: true
+        username blank: false, unique: false
         password blank: false
 
         firstName nullable: true
@@ -50,7 +50,7 @@ class Agent {
         governmentId nullable: true  // TODO: regex validation?
         birthday nullable: true
 
-        email nullable: true, email: true
+        email nullable: true // , email: true
 
         trainingStatus nullable: true, inList: ['not started', 'in progress', 'complete']
 
