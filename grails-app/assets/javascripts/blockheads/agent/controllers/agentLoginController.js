@@ -11,7 +11,7 @@ function AgentLoginController(Agent, $stateParams, $state) {
         vm.errors = undefined;
         Agent.list({max: max, offset: offset}, function(data) {
             angular.forEach(data, function(item){
-                if (vm.agent.username.toLowerCase() == item.username.toLowerCase() && vm.agent.password.toLowerCase() == item.password.toLowerCase() ){
+                if (vm.agent.email.toLowerCase() == item.email.toLowerCase() && vm.agent.password.toLowerCase() == item.password.toLowerCase() ){
                     $state.go('agent.show', {id: item.id});
                 }
             })

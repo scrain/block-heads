@@ -99,7 +99,6 @@ class BootStrap {
         ).save(failOnError:true)
 
         def jdoe = new Agent(
-            username: 'jdoe',
             password: 'demo',
             firstName: 'John',
             lastName: 'Doe',
@@ -120,7 +119,6 @@ class BootStrap {
         ).save(failOnError:true)
 
         def fflintstone = new Agent(
-            username: 'fflintstone',
             password: 'bedrock',
             firstName: 'Fred',
             lastName: 'Flintstone',
@@ -141,7 +139,6 @@ class BootStrap {
         ).save(failOnError:true)
 		
 		def hsimpson = new Agent(
-            username: 'hsimpson',
             password: 'donut',
             firstName: 'Homer',
             lastName: 'Simpson',
@@ -162,7 +159,6 @@ class BootStrap {
         ).save(failOnError:true)
 
         def freshman = new Agent(
-                username: 'skippy',
                 password: 'demo',
                 firstName: 'Skip',
                 lastName: 'Johnson',

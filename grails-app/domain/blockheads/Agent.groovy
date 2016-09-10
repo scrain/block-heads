@@ -7,7 +7,6 @@ import groovy.transform.Sortable
 @Sortable(includes=['lastName', 'firstName'])
 @Resource(readOnly = false, formats = ['json', 'xml'])
 class Agent {
-    String username
     String password
     String firstName
     String lastName
@@ -42,7 +41,6 @@ class Agent {
     ]
 
     static constraints = {
-        username blank: false, unique: false
         password blank: false
 
         firstName nullable: true
