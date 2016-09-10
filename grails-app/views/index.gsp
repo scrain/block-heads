@@ -57,10 +57,15 @@
 <div class="container">
     <div ui-view></div>
 </div>
+
+<br />
+<br />
+<br />
+
 <div class="row">
-<div class="col-md-12">
-<div class="footer" role="contentinfo"></div>
-</div>
+    <div class="col-md-12">
+        <div class="footer" role="contentinfo"></div>
+    </div>
 </div>
 
 <div id="spinner" class="spinner" style="display:none;">
