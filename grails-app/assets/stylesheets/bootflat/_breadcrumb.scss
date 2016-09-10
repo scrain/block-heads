@@ -6,8 +6,9 @@ $breadcrumb-background-color:                  $lightgray-dark !default;
 
 $breadcrumb-arrow-radius:                      4px !default;
 $breadcrumb-arrow-font-color:                  $white !default;
-$breadcrumb-arrow-background-color:            $theme-color-dark !default;
-$breadcrumb-arrow-background-color-hover:      $theme-color-light !default;
+$breadcrumb-arrow-background-color:            $tan-scheme-color-light !default;
+$breadcrumb-arrow-border-color:                $tan-scheme-color-dark !default;
+$breadcrumb-arrow-background-color-hover:      $aqua-light !default;
 
 // Exports
 //------------------------------------------------------
@@ -91,7 +92,7 @@ $breadcrumb-arrow-background-color-hover:      $theme-color-light !default;
           z-index: 3;
       }
       & li a:after{
-          right: -11px;
+          right: -10px;
           border-left: 11px solid darken($breadcrumb-arrow-background-color, 10%);
           z-index: 2;
       }
