@@ -1,16 +1,16 @@
 <div class="row">
     <div class="col-md-12">
         <div id="login-agent" class="content scaffold-edit" role="main">
-            <ul class="errors" role="alert" ng-if="vm.errors">
-                <li ng-repeat="error in vm.errors">{{error.message}}</li>
+            <ul class="errors" role="alert" ng-if="vm.loginerrors">
+                <li ng-repeat="error in vm.loginerrors">{{error.message}}</li>
             </ul>
             <form name="loginAgent" ng-submit="vm.loginAgent()">
                 <div class="fieldcontain required">
-                    <input placeholder="email" required="" name="email" id="email" ng-model="vm.agent.email" type="email" class="form-control"/>
+                    <input placeholder="email" required="" name="email" id="email" ng-model="vm.agentlogin.email" type="email" class="form-control"/>
 
                 </div>
                 <div class="fieldcontain required">
-                    <input placeholder="password" required="" name="password" id="password" ng-model="vm.agent.password" type="password" class="form-control"/>
+                    <input placeholder="password" required="" name="password" id="password" ng-model="vm.agentlogin.password" type="password" class="form-control"/>
                 </div>
 
                 <p/>
