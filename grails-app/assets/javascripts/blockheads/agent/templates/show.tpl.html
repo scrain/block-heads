@@ -1,25 +1,25 @@
-<div class="nav" role="navigation">
-    <ul>
-        <li><a ui-sref="index" class="home">Home</a></li>
-        <li><a class="list" ui-sref="agent.list" class="list">Agent List</a></li>
-        <li><a class="create" ui-sref="agent.create" class="create">New Agent</a></li>
-    </ul>
-</div>
+<!--<div class="nav" role="navigation">-->
+    <!--<ul>-->
+        <!--<li><a ui-sref="index" class="home">Home</a></li>-->
+        <!--<li><a class="list" ui-sref="agent.list" class="list">Agent List</a></li>-->
+        <!--<li><a class="create" ui-sref="agent.create" class="create">New Agent</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
 <div id="show-part" class="content scaffold-show" role="main">
     <h1>My Account</h1>
     <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-4">
-            <font size="4">Goal: $36,000 premium sold for 3 years</font>
+            <font size="4">Goal: {{vm.agent.contract.description}}</font>
         </div>
     </div>
     <div class="row">
         <div class="col-md-1">
         </div>
-            <div class="col-md-4">
-                <font size="4">Payout: $10,000</font>
-            </div>
+        <div class="col-md-4">
+            <font size="4">Payout: {{vm.agent.contract.maxPayout}}.00</font>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-6">
@@ -28,13 +28,12 @@
     </div>
     <div class="row">
         <div class="col-md-3">
-            <font size="4">Time Remaining</font>
+            <font size="4">Months Remaining</font>
         </div>
-        <div class="col-md-6">
-            <!-- progress bar -->
+        <div class="col-md-9">
             <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: 75%">9 months completed</div>
-                <div class="progress-bar progress-bar-warning" style="width: 25%">3 months to go</div>
+                <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPercent()}}%"> {{vm.agent.contractMonthsElapsed()}} complete</div>
+                <div class="progress-bar progress-bar-warning" style="width: {{100-vm.agent.contractPercent()}}%">{{vm.agent.contractMonthsRemaining()}} to go</div>
             </div>
         </div>
     </div>
@@ -42,12 +41,11 @@
         <div class="col-md-3">
             <font size="4">Progress Toward Sales Goal</font>
         </div>
-        <div class="col-md-6">
-            <!-- progress bar -->
+        <div class="col-md-9">
             <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: 69.4%">$25K Sold</div>
-                <div class="progress-bar progress-bar-info" style="width: 16.7%">$6K Pending</div>
-                <div class="progress-bar progress-bar-warning" style="width: 13.9%">$5K to go!</div>
+                <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPremiumPercentComplete()}}%">${{vm.agent.contractPremiumComplete()}} Sold</div>
+                <div class="progress-bar progress-bar-info" style="width: {{vm.agent.contractPremiumPercentPending()}}%">${{vm.agent.contractPremiumPending()}} Pending</div>
+                <div class="progress-bar progress-bar-warning" style="width: {{100 - vm.agent.contractPremiumPercentComplete() - vm.agent.contractPremiumPercentPending()}}%">${{vm.agent.contractPremium() - vm.agent.contractPremiumComplete() - vm.agent.contractPremiumPending()}} to go!</div>
             </div>
         </div>
     </div>
@@ -58,13 +56,16 @@
     </div>
     <div class="row">
         <div class="col-md-3">
-            <font size="4">Total Contract Length: 3 years</font>
+            <font size="4">Total Contract Length: {{vm.agent.contract.term}}s</font>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-9">
             <!-- progress bar -->
             <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: 25%">9 months completed</div>
-                <div class="progress-bar progress-bar-warning" style="width: 75%">2 years, 3 months to go</div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPremiumPercentComplete()}}%">${{vm.agent.contractPremiumComplete()}} Sold</div>
+                    <div class="progress-bar progress-bar-info" style="width: {{vm.agent.contractPremiumPercentPending()}}%">${{vm.agent.contractPremiumPending()}} Pending</div>
+                    <div class="progress-bar progress-bar-warning" style="width: {{100 - vm.agent.contractPremiumPercentComplete() - vm.agent.contractPremiumPercentPending()}}%">${{vm.agent.contractPremium() - vm.agent.contractPremiumComplete() - vm.agent.contractPremiumPending()}} to go!</div>
+                </div>
             </div>
         </div>
     </div>
@@ -83,6 +84,19 @@
                     <th>Premium</th>
                     <th>Status</th>
                 </tr>
+                <tr ng-repeat="transaction in vm.agent.transactions">
+                    <td>{{transaction.dateCreated | date: 'MM/dd/yyyy'}}</td>
+                    <td>{{transaction.applicationNumber}}</td>
+                    <td>${{transaction.premium}}.00</td>
+                    <td>
+                        <div class="progress">
+                            <div ng-if="transaction.status === 'pending'"   class="progress-bar progress-bar-info" style="width: 100%">Pending</div>
+                            <div ng-if="transaction.status === 'complete'"  class="progress-bar progress-bar-success" style="width: 100%">Complete</div>
+                            <div ng-if="transaction.status === 'cancelled'" class="progress-bar progress-bar-warning" style="width: 100%">Cancelled</div>
+                        </div>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>9/7/2016</td>
                     <td>26783455R</td>
