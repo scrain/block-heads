@@ -19,9 +19,9 @@ angular.module("blockheads.index", [
 function config($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('index', {
-            url: "/",
+            url: "/main",
             templateUrl: "/blockheads/index/index.html"
         });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/main');
 }

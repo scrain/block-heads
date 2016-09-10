@@ -10,9 +10,15 @@ contract AgentOffer {
     string frequency;
     uint instatedDate;
 
-    function AgentOffer(string name, string description, string offerType, uint maxPayout, string term, string frequency, uint instatedDate) {
-        pendingAmount = 0;
-        amount = 0;
+    event CurrentState(address owner, string name, string description, string offerType, uint pendingAmount, uint amount, uint maxPayout, string term, string frequency, uint instatedDate);
+
+    function retrieveState() {
+        CurrentState(owner, name, description, offerType, pendingAmount, amount, maxPayout, term, frequency, instatedDate);
+    }
+
+    function AgentOffer(string name, string description, string offerType, uint pendingAmount, uint amount, uint maxPayout, string term, string frequency, uint instatedDate) {
+        pendingAmount = pendingAmount;
+        amount = amount;
 
         name = name;
         description = description;
