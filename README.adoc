@@ -1,6 +1,6 @@
 = "Simply Carrots"
 
-Projet created for the http://angelhack.com/portfolio-item/rga-blockchain-hackathon-september-8-9-2016/[RGAx-AURA Blockchain Hackathon], September 10, 2016
+Project created for the http://angelhack.com/portfolio-item/rga-blockchain-hackathon-september-8-9-2016/[RGAx-AURA Blockchain Hackathon], September 10, 2016
 
 == Team "Outside the Block"
  * https://github.com/bkcompton[@bkcompton] - Brain Compton
