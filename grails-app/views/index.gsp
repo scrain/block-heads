@@ -34,7 +34,7 @@
             <div class="navbar-brand" style="height:125px;">
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="assets/logo_white.png" alt="Simply Carrots" style="width:192px;height:78px;">
+                        <a href="#"><img src="assets/logo_white.png" alt="Simply Carrots" style="width:192px;height:78px;"></a>
                     </div>
                     <div class="col-lg-4">
                     </div>
