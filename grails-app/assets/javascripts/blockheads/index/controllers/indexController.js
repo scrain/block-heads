@@ -4,7 +4,7 @@ angular
     .module("blockheads.index")
     .controller("IndexController", IndexController);
 
-function IndexController(applicationDataFactory, contextPath, $state) {
+function IndexController(applicationDataFactory, contextPath, Agent, $state) {
     var vm = this;
 
     vm.contextPath = contextPath;
@@ -17,4 +17,15 @@ function IndexController(applicationDataFactory, contextPath, $state) {
         return $state.get(name) != null;
     };
 
+    vm.loginAgent = function() {
+        vm.errors = undefined;
+        Agent.list({max: max, offset: offset}, function(data) {
+            angular.forEach(data, function(item){
+                if (vm.agent.email.toLowerCase() == item.email.toLowerCase() && vm.agent.password.toLowerCase() == item.password.toLowerCase() ){
+                    $state.go('agent.show', {id: item.id});
+                }
+            })
+        });
+        $state.go('agent.login');
+    };
 }

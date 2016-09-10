@@ -19,9 +19,10 @@ angular.module("blockheads.index", [
 function config($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('index', {
-            url: "/",
+            url: "/main",
+            controller: "IndexController as vm",
             templateUrl: "/blockheads/index/index.html"
         });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/main');
 }
