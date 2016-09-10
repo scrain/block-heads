@@ -22,6 +22,10 @@
 
             function updateAgentOffer(insuranceApp) {
                 if (insuranceApp.id) { // update existing insurance app
+                    // var transaction = new Transaction({status:insuranceApp.status,faceAmount:insuranceApp.premium
+                    //
+                    // Date dateCreated
+                    // Date lastUpdated)
 
                 } else { // new insurance app
 

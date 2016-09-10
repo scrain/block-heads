@@ -20,7 +20,10 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
 
     vm.updateAgent = function() {
         vm.errors = undefined;
-        vm.agent.contract.id = 4;                   // TODO: hardcoded to none
+        if (!vm.agent.contract.id) {
+            vm.agent.contract.id = 4;                   // TODO: hardcoded to none
+        }
+
         var updateServer  = function(contract) {
             vm.agent.$update(function() {
                 $state.go('agent.show', {id: vm.agent.id});
