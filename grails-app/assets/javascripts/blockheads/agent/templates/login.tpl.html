@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6">
+    <div id="login-agent" class="content scaffold-login" role="main">
+      <ul class="errors" role="alert" ng-if="vm.errors">
+        <li ng-repeat="error in vm.errors">{{error.message}}</li>
+      </ul>
+
+      <form name="loginAgent" ng-submit="vm.loginAgent()">
+        <div class="fieldcontain required">
+          <label for="username">Username
+            <span class="required-indicator">*</span>
+          </label>
+          <input required="" name="username" id="username" ng-model="vm.agent.username" type="text" class="form-control" />
+        </div>
+        <div class="fieldcontain required">
+          <label for="password">Password
+            <span class="required-indicator">*</span>
+          </label>
+          <input required="" name="password" id="password" ng-model="vm.agent.username" type="password" class="form-control" />
+        </div>
+
+        <p />
+        <fieldset class="buttons">
+          <input type="submit" name="Login" class="btn btn-block save" value="Login"/>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
