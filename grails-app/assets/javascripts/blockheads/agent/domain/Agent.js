@@ -81,6 +81,157 @@ function Agent($resource, domainListConversion, domainConversion, domainToManyCo
         return Math.round( (this.contractPremiumPending() / this.contractPremium())*100);
     };
 
+    Agent.prototype.contractEndDate = function () {
+        var d = new Date(this.contractDate.getTime());
+
+        d.setDate( d.getDate() + this.contractDays())
+
+        return d;
+    };
+
+    /**
+        Methods for calculations for current period only
+     **/
+    Agent.prototype.contractCurrentPeriodStart = function () {
+        var startDate = new Date(this.contractDate.getTime());
+        var endDate   = this.contractEndDate();
+        var today     = new Date();
+
+        if ( today > endDate ) {
+            endDate.setDate(endDate.getDate() - 365);
+            return endDate;
+        }
+        if ( today < startDate ) {
+            return startDate;
+        }
+        var daysIntoCurrentPeriod = daysBetween(startDate, today) % 365;
+
+        today.setDate(today.getDate() - daysIntoCurrentPeriod);
+
+        return today;
+    };
+
+    Agent.prototype.contractCurrentPeriodEnd = function () {
+        var startDate = new Date(this.contractDate.getTime());
+        var endDate   = this.contractEndDate();
+        var today     = new Date();
+
+        if ( today > endDate ) {
+            return endDate;
+        }
+        if ( today < startDate ) {
+            startDate.setDate(startDate.getDate() + 365);
+        }
+
+        var daysFromCurrentPeriodEnd = daysBetween(endDate, today) % 365;
+        endDate.setDate(endDate.getDate() - daysFromCurrentPeriodEnd);
+        return endDate;
+    };
+
+    Agent.prototype.contractPremiumCompleteCurrentPeriod = function () {
+        var total = 0;
+        var periodStart = this.contractCurrentPeriodStart();
+        var periodEnd   = this.contractCurrentPeriodEnd();
+
+        for (var i = 0; i < this.transactions.length; i++) {
+
+            if ( periodEnd > this.transactions[i].dateCreated  && this.transactions[i].dateCreated > periodStart ) {
+                if (this.transactions[i].status === 'complete') {
+                    total += this.transactions[i].premium;
+                }
+            }
+        }
+        return total;
+    };
+
+    Agent.prototype.contractPremiumPendingCurrentPeriod = function () {
+        var total = 0;
+        var periodStart = this.contractCurrentPeriodStart();
+        var periodEnd   = this.contractCurrentPeriodEnd();
+
+        for (var i = 0; i < this.transactions.length; i++) {
+
+            if ( periodEnd > this.transactions[i].dateCreated  && this.transactions[i].dateCreated > periodStart ) {
+                if (this.transactions[i].status === 'pending') {
+                    total += this.transactions[i].premium;
+                }
+            }
+        }
+        return total;
+    };
+
+    Agent.prototype.contractPremiumPercentCompleteCurrentPeriod = function () {
+        return Math.round( (this.contractPremiumCompleteCurrentPeriod() / this.contractPremiumPerPeriod())*100);
+    };
+
+    Agent.prototype.contractPremiumPendingCurrentPeriod = function () {
+        var total = 0;
+        for (var i = 0; i < this.transactions.length; i++) {
+            if (this.transactions[i].status === 'pending') {
+                total += this.transactions[i].premium;
+            }
+        }
+        return total;
+    };
+
+    Agent.prototype.contractPremiumPercentPendingCurrentPeriod = function () {
+        return Math.round( (this.contractPremiumPendingCurrentPeriod() / this.contractPremiumPerPeriod())*100);
+    };
+
+    Agent.prototype.contractPercentCurrentPeriod = function () {
+        if ( today > this.contractCurrentPeriodEnd() ) {
+            return 100;
+        }
+        if ( this.contractCurrentPeriodStart() > today) {
+            return 0;
+        }
+
+        var totalDays = 365;  // TODO: all periods are annual currently
+
+        var today = new Date();
+
+        var daysElapsed = daysBetween(this.contractCurrentPeriodStart(), today);
+
+        var percent =  Math.floor(( daysElapsed / totalDays ) * 100);
+
+        return percent;
+    };
+
+    Agent.prototype.contractPercent = function () {
+        if ( today > this.contractCurrentPeriodEnd() ) {
+            return 100;
+        }
+        if ( this.contractCurrentPeriodStart() > today) {
+            return 0;
+        }
+
+        var totalDays = this.contractDays();
+
+        var today = new Date();
+
+        var daysElapsed = daysBetween(this.contractDate, today);
+
+        var percent =  Math.round(( daysElapsed / totalDays ) * 100);
+
+        return percent;
+    };
+
+    Agent.prototype.contractMonthsElapsed = function () {
+        return Math.floor( contractMonths() * (this.contractPercent()/100.0) )
+    };
+
+    Agent.prototype.contractMonths = function () {
+        return Math.ceil( contractMonths() * ( (100.0-this.contractPercent())/100.0) )
+    };
+
+    Agent.prototype.contractMonthsElapsedCurrentPeriod = function () {
+        return Math.floor( 12.0 * (this.contractPercentCurrentPeriod()/100.0) )
+    };
+
+    Agent.prototype.contractMonthsRemainingCurrentPeriod = function () {
+        return Math.ceil( 12.0 * ( (100.0-this.contractPercentCurrentPeriod())/100.0) )
+    };
+
     Agent.prototype.contractMonths = function () {
         var totalMonths = 12; // TODO: hack
         if ( this.contract.term === '2 year' ) {
@@ -126,9 +277,8 @@ function Agent($resource, domainListConversion, domainConversion, domainToManyCo
         var totalDays = this.contractDays();
 
         var today = new Date();
-        var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
 
-        var daysElapsed = Math.round(Math.abs((this.contractDate.getTime() - today.getTime())/(oneDay)));
+        var daysElapsed = daysBetween(this.contractDate, today);
 
         var percent =  Math.round(( daysElapsed / totalDays ) * 100);
 
@@ -136,4 +286,13 @@ function Agent($resource, domainListConversion, domainConversion, domainToManyCo
     };
 
     return Agent;
+
+    function daysBetween( start, end ) {
+        var startDate = new Date(start);
+        var endDate = new Date(end);
+
+        var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+
+        return Math.round(Math.abs((endDate.getTime() - startDate.getTime())/(oneDay)));
+    }
 }

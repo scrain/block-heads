@@ -32,8 +32,8 @@
         </div>
         <div class="col-md-9">
             <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPercent()}}%"> {{vm.agent.contractMonthsElapsed()}} complete</div>
-                <div class="progress-bar progress-bar-warning" style="width: {{100-vm.agent.contractPercent()}}%">{{vm.agent.contractMonthsRemaining()}} to go</div>
+                <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPercentCurrentPeriod()}}%"> {{vm.agent.contractMonthsElapsedCurrentPeriod()}} complete</div>
+                <div class="progress-bar progress-bar-warning" style="width: {{100-vm.agent.contractPercentCurrentPeriod()}}%">{{vm.agent.contractMonthsRemainingCurrentPeriod()}} to go</div>
             </div>
         </div>
     </div>
@@ -43,15 +43,26 @@
         </div>
         <div class="col-md-9">
             <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPremiumPercentComplete()}}%">${{vm.agent.contractPremiumComplete()}} Sold</div>
-                <div class="progress-bar progress-bar-info" style="width: {{vm.agent.contractPremiumPercentPending()}}%">${{vm.agent.contractPremiumPending()}} Pending</div>
-                <div class="progress-bar progress-bar-warning" style="width: {{100 - vm.agent.contractPremiumPercentComplete() - vm.agent.contractPremiumPercentPending()}}%">${{vm.agent.contractPremium() - vm.agent.contractPremiumComplete() - vm.agent.contractPremiumPending()}} to go!</div>
+                <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPremiumPercentCompleteCurrentPeriod()}}%">${{vm.agent.contractPremiumCompleteCurrentPeriod()}} Sold</div>
+                <div class="progress-bar progress-bar-info" style="width: {{vm.agent.contractPremiumPercentPendingCurrentPeriod()}}%">${{vm.agent.contractPremiumPendingCurrentPeriod()}} Pending</div>
+                <div class="progress-bar progress-bar-warning" style="width: {{100 - vm.agent.contractPremiumPercentCompleteCurrentPeriod() - vm.agent.contractPremiumPercentPendingCurrentPeriod()}}%">${{vm.agent.contractPremiumPerPeriod() - vm.agent.contractPremiumCompleteCurrentPeriod() - vm.agent.contractPremiumPendingCurrentPeriod()}} to go!</div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <h2>Overall Offer Status</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <font size="4">Time Remaining</font>
+        </div>
+        <div class="col-md-9">
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" style="width: {{vm.agent.contractPercent()}}%"> {{vm.agent.contractMonthsElapsed()}} complete</div>
+                <div class="progress-bar progress-bar-warning" style="width: {{100-vm.agent.contractPercent()}}%">{{vm.agent.contractMonthsRemaining()}} to go</div>
+            </div>
         </div>
     </div>
     <div class="row">
