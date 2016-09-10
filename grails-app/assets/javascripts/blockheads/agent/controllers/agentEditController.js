@@ -18,11 +18,32 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
         vm.errors = [{message: "Could not retrieve agent with ID " + $stateParams.id}];
     });
 
+    /**
+     * Step 2 of registration process... personal info
+     */
     vm.updateAgent = function() {
         vm.errors = undefined;
         if (!vm.agent.contract.id) {
-            vm.agent.contract.id = 4;                   // TODO: hardcoded to none
+            vm.agent.contract.id = 4;  // TODO: hardcoded to none for now
         }
+
+        vm.agent.$update(function() {
+            $state.go('agent.select-contract', {id: vm.agent.id});
+        }, function(response) {
+            var data = response.data;
+            if (data.hasOwnProperty('message')) {
+                vm.errors = [data];
+            } else {
+                vm.errors = data._embedded.errors;
+            }
+        });
+    };
+
+    /**
+     * Step 3 of registration process... contract selection
+     */
+    vm.selectContract = function() {
+        vm.errors = undefined;
 
         var updateServer  = function(contract) {
             vm.agent.$update(function() {
@@ -51,9 +72,10 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
             }
         };
 
-        if (vm.agent.contract && !vm.agent.contract.id === 4 && !vm.agent.contractAddress) {
+        if (vm.agent.contract && vm.agent.contract.id !== 4 && !vm.agent.contractAddress) {
             // create new blockchain contract
-            contractService.createAgentOffer(vm.agent.contract, transactionCompleteCb);
+            // contractService.createAgentOffer(vm.agent.contract, transactionCompleteCb);
+            updateServer();
         } else {
             updateServer();
         }

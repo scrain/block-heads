@@ -34,7 +34,7 @@ class AgentController {
 
         agent.save flush:true
 
-        respond agent, [status: CREATED, view:"edit"]
+        respond agent, [status: CREATED, view:"edit"]  // after step 1  go to step 2
     }
 
     @Transactional
@@ -57,8 +57,28 @@ class AgentController {
 
         agent.save flush:true
 
-        respond agent, [status: OK, view:"show"]
+        respond agent, [status: OK, view:"select-contract"] // step 2 to step 3
     }
+
+    @Transactional
+    def updateContract(Agent agent) {
+        if (agent == null) {
+            transactionStatus.setRollbackOnly()
+            render status: NOT_FOUND
+            return
+        }
+
+        if (agent.hasErrors()) {
+            transactionStatus.setRollbackOnly()
+            respond agent.errors, view:'edit'
+            return
+        }
+
+        agent.save flush:true
+
+        respond agent, [status: OK, view:"show"] // step 3 to show agent
+    }
+
 
     @Transactional
     def delete(Agent agent) {
