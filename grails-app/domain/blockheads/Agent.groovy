@@ -7,10 +7,10 @@ import groovy.transform.Sortable
 @Sortable(includes=['lastName', 'firstName'])
 @Resource(readOnly = false, formats = ['json', 'xml'])
 class Agent {
+    String email
     String password
     String firstName
     String lastName
-    String email
 
     String trainingStatus
 
@@ -41,22 +41,21 @@ class Agent {
     ]
 
     static constraints = {
-        password blank: false
+        email       unique: true, blank: false, email: true
+        password    blank: false
 
-        firstName nullable: true
-        lastName nullable: true
-        governmentId nullable: true  // TODO: regex validation?
-        birthday nullable: true
-
-        email nullable: true // , email: true
+        firstName       nullable: true
+        lastName        nullable: true
+        governmentId    nullable: true  // TODO: regex validation?
+        birthday        nullable: true
 
         trainingStatus nullable: true, inList: ['not started', 'in progress', 'complete']
 
-        address1 nullable: true
-        address2 nullable: true
-        city nullable: true
-        state nullable: true
-        zip nullable: true   // TODO: regex validation?
+        address1    nullable: true
+        address2    nullable: true
+        city        nullable: true
+        state       nullable: true
+        zip         nullable: true   // TODO: regex validation?
 
         agentId nullable: true
         licenseStates()
