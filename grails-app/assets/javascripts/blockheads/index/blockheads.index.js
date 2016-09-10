@@ -20,6 +20,7 @@ function config($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('index', {
             url: "/main",
+            controller: "IndexController as vm",
             templateUrl: "/blockheads/index/index.html"
         });
 
