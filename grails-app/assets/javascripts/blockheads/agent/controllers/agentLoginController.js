@@ -5,7 +5,7 @@ angular
 function AgentLoginController(Agent, $stateParams, $state) {
      var vm = this;
     vm.agent = new Agent();
-    var max = 10, offset = 0;
+    var max = 1000, offset = 0;
 
     vm.loginAgent = function() {
         vm.errors = undefined;

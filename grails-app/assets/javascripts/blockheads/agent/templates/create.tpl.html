@@ -19,7 +19,7 @@
     <div class="col-md-7">
         <h4>You're awesome at sales - shouldn't you be rewarded for it?</h4>
         <div class="jumbotron">
-            <div id="carousel1" class="carousel slide" data-ride="carousel">
+            <div id="carousel1" class="carousel slide auto" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -30,10 +30,10 @@
                     <div class="item"><img src="assets/no-plan.jpg"/></div>
                     <div class="item"><img src="assets/worry-bench.jpg"/></div>
                 </div>
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev" onclick="$('#myCarousel').carousel('prev'); return false;">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next" onclick="$('#myCarousel').carousel('next'); return false;">
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </div>
@@ -59,17 +59,30 @@
                         <fieldset class="buttons">
                             <input type="submit" name="create" class="btn btn-block save" value="Sign Up!"/>
                         </fieldset>
-                        <hr />
-                        <a class="btn btn-block btn-social btn-facebook">
-                            <span class="fa fa-facebook"></span> Sign in with Facebook
-                        </a>
-                        <a class="btn btn-block btn-social btn-twitter">
-                            <span class="fa fa-twitter"></span>
-                            Sign in with Twitter
-                        </a>
+                        <br />
                     </form>
                 </div>
-                <p><small>By Signing up I agree to the Terms and Privacy Policy. I also agree to a background and credit check.</small></p>
+                <div class="content">
+                    <a class="btn btn-block btn-social btn-facebook">
+                        <span class="fa fa-facebook"></span> Sign in with Facebook
+                    </a>
+                    <a class="btn btn-block btn-social btn-twitter">
+                        <span class="fa fa-twitter"></span>
+                        Sign in with Twitter
+                    </a>
+                </div>
+                <p><small>By Signing up I agree to the Terms and Privacy Policy. </small></p>
+            </div>
+            <div class="panel-heading">
+                <h3 class="panel-title">Already a Member?</h3>
+            </div>
+            <div class="panel-body text-center">
+                <div id="login-agent" class="content scaffold-create" role="main">
+                    <ul class="errors" role="alert" ng-if="vm.errors">
+                        <li ng-repeat="error in vm.errors">{{error.message}}</li>
+                    </ul>
+                    <ng-include src="'/blockheads/agent/login.html'"></ng-include>
+                </div>
             </div>
         </div>
     </div>

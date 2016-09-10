@@ -28,6 +28,9 @@ class Agent {
     SortedSet<State> licenseStates
 
     Contract contract
+
+    Date contractDate
+
     SortedSet<Incentive> incentives
 
     String contractAddress
@@ -61,10 +64,11 @@ class Agent {
         licenseStates()
 
         contract nullable: true
+        contractDate nullable: true
         contractAddress nullable: true
 
         incentives()
     }
 
-    static fetchMode = [contract: 'eager']
+    static fetchMode = [contract: 'eager', transactions: 'eager']
 }

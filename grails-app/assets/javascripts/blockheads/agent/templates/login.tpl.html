@@ -1,29 +1,23 @@
 <div class="row">
-  <div class="col-md-6">
-    <div id="login-agent" class="content scaffold-edit" role="main">
-      <ul class="errors" role="alert" ng-if="vm.errors">
-        <li ng-repeat="error in vm.errors">{{error.message}}</li>
-      </ul>
+    <div class="col-md-12">
+        <div id="login-agent" class="content scaffold-edit" role="main">
+            <ul class="errors" role="alert" ng-if="vm.errors">
+                <li ng-repeat="error in vm.errors">{{error.message}}</li>
+            </ul>
+            <form name="loginAgent" ng-submit="vm.loginAgent()">
+                <div class="fieldcontain required">
+                    <input placeholder="email" required="" name="email" id="email" ng-model="vm.agent.email" type="email" class="form-control"/>
 
-      <form name="loginAgent" ng-submit="vm.loginAgent()">
-        <div class="fieldcontain required">
-          <label for="email">E-mail
-            <span class="required-indicator">*</span>
-          </label>
-          <input required="" name="email" id="email" ng-model="vm.agent.email" type="text" class="form-control" />
-        </div>
-        <div class="fieldcontain required">
-          <label for="password">Password
-            <span class="required-indicator">*</span>
-          </label>
-          <input required="" name="password" id="password" ng-model="vm.agent.password" type="password" class="form-control" />
-        </div>
+                </div>
+                <div class="fieldcontain required">
+                    <input placeholder="password" required="" name="password" id="password" ng-model="vm.agent.password" type="password" class="form-control"/>
+                </div>
 
-        <p />
-        <fieldset class="buttons">
-          <input type="submit" name="Login" class="btn btn-block save" value="Login"/>
-        </fieldset>
-      </form>
+                <p/>
+                <fieldset class="buttons">
+                    <input type="submit" name="Login" class="btn btn-block save" value="Login"/>
+                </fieldset>
+            </form>
+        </div>
     </div>
-  </div>
 </div>

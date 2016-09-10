@@ -3,5 +3,4 @@ import blockheads.Agent
 model {
 	Agent agent
 }
-
-json g.render(agent, [expand: ['contract']])
+json g.render(agent, [expand: ['contract', 'transactions']])

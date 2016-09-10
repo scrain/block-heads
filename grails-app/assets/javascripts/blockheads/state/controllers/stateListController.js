@@ -7,7 +7,7 @@ angular
 function StateListController(State) {
     var vm = this;
 
-    var max = 10, offset = 0;
+    var max = 1000, offset = 0;
 
     State.list({max: max, offset: offset}, function(data) {
         vm.stateList = data;
