@@ -74,8 +74,8 @@ function AgentEditController(Agent, $stateParams, $state, $q, State, Contract, I
 
         if (vm.agent.contract && vm.agent.contract.id !== 4 && !vm.agent.contractAddress) {
             // create new blockchain contract
-            // contractService.createAgentOffer(vm.agent.contract, transactionCompleteCb);
-            updateServer();
+            contractService.createAgentOffer(vm.agent.contract, transactionCompleteCb);
+            //updateServer();
         } else {
             updateServer();
         }
