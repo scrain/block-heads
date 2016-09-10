@@ -55,30 +55,13 @@
     </div>
 
 <div class="container">
-
-
-
     <div ui-view></div>
-
-    <!-- prev/next nav -->
-    <div class="row">
-        <ul class="pager">
-            <li class="previous"><a href="#">Previous</a></li>
-            <li class="next disabled"><a href="#">Next</a></li>
-        </ul>
-    </div>
-
-    <!-- progress bar -->
-    <div class="progress">
-        <div class="progress-bar progress-bar-success" style="width: 40%">40%</div>
-
-        <div class="progress-bar progress-bar-warning" style="width: 25%">25%</div>
-    </div>
-
-
 </div>
-
+<div class="row">
+<div class="col-md-12">
 <div class="footer" role="contentinfo"></div>
+</div>
+</div>
 
 <div id="spinner" class="spinner" style="display:none;">
 <g:message code="spinner.alt" default="Loading&hellip;"/>
