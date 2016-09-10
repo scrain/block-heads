@@ -30,8 +30,19 @@
 <body ng-app="blockheads" ng-controller="IndexController as indexCtrl">
 
 <div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div>
         <div class="navbar-header">
+            <div class="navbar-brand" style="height:125px;">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="assets/logo_white.png" alt="Simply Carrots" style="width:192px;height:78px;">
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-5">
+                        <p align="center" style="color:#FFF;line-height:40px;font-size:140%;"><b>Incentives you want. Promises you trust.</b></p>
+                    </div
+                </div>
+            </div>
         </div>
         %{--<div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;" uib-collapse="!navExpanded">--}%
         %{--<ul class="nav navbar-nav navbar-right">--}%
