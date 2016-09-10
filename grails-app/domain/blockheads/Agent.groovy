@@ -69,5 +69,5 @@ class Agent {
         incentives()
     }
 
-    static fetchMode = [contract: 'eager']
+    static fetchMode = [contract: 'eager', transactions: 'eager']
 }
