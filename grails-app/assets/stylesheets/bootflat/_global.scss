@@ -50,12 +50,19 @@ $mediumgray-light:            #CCD1D9 !default;
 $darkgray-dark:               #434A54 !default;
 $darkgray-light:              #656D78 !default;
 
-$theme-color-light:           $bluejeans-light !default;
-$theme-color-dark:            $bluejeans-dark !default;
-$secondary-color-light:       $grapefruit-light !default;
-$secondary-color-dark:        $grapefruit-dark !default;
-$tertiary-color-light:        $mint-light !default;
-$tertiary-color-dark:         $mint-dark !default;
+$tan-scheme-dark:             #65754D !default;
+$tan-scheme-light:            #C7DBA9 !default;
+$tan-scheme-color-dark:       #0D3257 !default;
+$tan-scheme-color-light:      #97A7B7 !default;
+$tan-scheme-color2-dark:      #B2C2B9 !default;
+$tan-scheme-color2-light:     #BDD6E0 !default;
+
+$theme-color-light:           $tan-scheme-color-light !default;
+$theme-color-dark:            $tan-scheme-color-dark !default;
+$secondary-color-light:       $tan-scheme-light !default;
+$secondary-color-dark:        $tan-scheme-dark !default;
+$tertiary-color-light:        $tan-scheme-color2-light !default;
+$tertiary-color-dark:         $tan-scheme-color2-dark !default;
 
 // Global Mixins
 //------------------------------------------------------

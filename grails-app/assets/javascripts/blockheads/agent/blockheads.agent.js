@@ -38,7 +38,7 @@ function config($stateProvider) {
         })
         .state('agent.create', {
             url: "/create",
-            templateUrl: "/blockheads/agent/create.html",
+            templateUrl: "/blockheads/agent/create.html",         // create account (step 1)
             controller: "AgentCreateController as vm"
         })
         .state('agent.login', {
@@ -48,7 +48,12 @@ function config($stateProvider) {
         })
         .state('agent.edit', {
             url: "/edit/:id",
-            templateUrl: "/blockheads/agent/edit.html",
+            templateUrl: "/blockheads/agent/edit.html",           // enter personal info (step 2)
+            controller: "AgentEditController as vm"
+        })
+        .state('agent.select-contract', {
+            url: "/selectContract/:id",
+            templateUrl: "/blockheads/agent/select-contract.html", // select contract (step 3)
             controller: "AgentEditController as vm"
         })
         .state('agent.show', {
