@@ -10,86 +10,86 @@ contract AgentOffer {
     string frequency;
     uint instatedDate;
 
-    event CurrentState(address owner, string name, string description, string offerType, uint pendingAmount, uint amount, uint maxPayout, string term, string frequency, uint instatedDate);
+    event CurrentState(address ownerVar, string nameVar, string descriptionVar, string offerTypeVar, uint pendingAmountVar, uint amountVar, uint maxPayoutVar, string termVar, string frequencyVar, uint instatedDate);
 
     function retrieveState() {
         CurrentState(owner, name, description, offerType, pendingAmount, amount, maxPayout, term, frequency, instatedDate);
     }
 
-    function AgentOffer(string name, string description, string offerType, uint pendingAmount, uint amount, uint maxPayout, string term, string frequency, uint instatedDate) {
-        pendingAmount = pendingAmount;
-        amount = amount;
+    function AgentOffer(string nameVar, string descriptionVar, string offerTypeVar, uint pendingAmountVar, uint amountVar, uint maxPayoutVar, string termVar, string frequencyVar, uint instatedDateVar) {
+        pendingAmount = pendingAmountVar;
+        amount = amountVar;
 
-        name = name;
-        description = description;
-        offerType = offerType;
-        maxPayout = maxPayout;
-        term = term;
-        frequency = frequency;
-        instatedDate = instatedDate;
-        owner = msg.sender;
+        name = nameVar;
+        description = descriptionVar;
+        offerType = offerTypeVar;
+        maxPayout = maxPayoutVar;
+        term = termVar;
+        frequency = frequencyVar;
+        instatedDate = instatedDateVar;
+        owner = msg.senderVar;
 
     }
 
-	function setOwner(address owner) {
-		owner = owner;
+	function setOwner(address ownerVar) {
+		owner = ownerVar;
 	}
 	function getOwner() constant returns (address retVal) {
-		return owner;
+		retVal = owner;
 	}
-	function setName(string name) {
-        name = name;
+	function setName(string nameVar) {
+        name = nameVar;
     }
-    function getName() constant returns (string name) {
-        return name;
+    function getName() constant returns (string retVal) {
+        retVal = name;
     }
-    function setDescription(string description) {
-        description = description;
+    function setDescription(string descriptionVar) {
+        description = descriptionVar;
     }
-    function getDescription() constant returns (string description) {
-        return description;
+    function getDescription() constant returns (string retVal) {
+        retVal = description;
     }
-    function setOfferType(string offerType) {
-        offerType = offerType;
+    function setOfferType(string offerTypeVar) {
+        offerType = offerTypeVar;
     }
-    function getOfferType() constant returns (string offerType) {
-        return offerType;
+    function getOfferType() constant returns (string retVal) {
+        retVal = offerType;
     }
-    function setPendingAmount(uint amount) {
+    function setPendingAmount(uint amountVar) {
         pendingAmount = amount;
     }
-    function getPendingAmount() constant returns (uint pendingAmount) {
-        return pendingAmount;
+    function getPendingAmount() constant returns (uint retVal) {
+        pendingAmountRtrn =  pendingAmount;
     }
-    function setAmount(uint amount) {
-        amount = amount;
+    function setAmount(uint amountVar) {
+        amount = amountVar;
     }
-    function getAmount() constant returns (uint amount) {
-        return amount;
+    function getAmount() constant returns (uint amountVal) {
+        amountVal = amountVal;
     }
-    function setMaxPayout(uint maxPayout) {
-        maxPayout = maxPayout;
+    function setMaxPayout(uint maxPayoutVar) {
+        maxPayout = maxPayoutVar;
     }
-    function getMaxPayout() constant returns (uint maxPayout) {
-        return maxPayout;
+    function getMaxPayout() constant returns (uint retVal) {
+        retVal = maxPayout;
     }
-    function setTerm(string term) {
-        term = term;
+    function setTerm(string termVar) {
+        term = termVar;
     }
-    function getTerm() constant returns (string term) {
-        return term;
+    function getTerm() constant returns (string retVal) {
+        retVal = term;
     }
-    function setFrequency(string frequency) {
-        frequency = frequency;
+    function setFrequency(string frequencyVar) {
+        frequency = frequencyVar;
     }
-    function getFrequency() constant returns (string frequency) {
-        return frequency;
+    function getFrequency() constant returns (string retVal) {
+        retVal = frequency;
     }
-    function setInstatedDate(uint instatedDate) {
-        instatedDate = instatedDate;
+    function setInstatedDate(uint instatedDateVar) {
+        instatedDate = instatedDateVar;
     }
-    function getInstatedDate() constant returns (uint instatedDate) {
-        return instatedDate;
+    function getInstatedDate() constant returns (uint retVal) {
+        retVal = instatedDate;
     }
 
     function movePendingToInforcedAmount(uint amount) {

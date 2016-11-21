@@ -116,7 +116,6 @@ class BootStrap {
             licenseStates: stateMO,
             contract: fiftyFiveKTwoYears,
             contractDate: new Date('11/14/2015'),
-            contractAddress: '21234124124',
             incentives: [],
             transactions: []
         ).save(failOnError:true)
@@ -137,7 +136,6 @@ class BootStrap {
             licenseStates: stateMO,
             contract: twentyThreeKFiveYears,
             contractDate: new Date('10/07/2014'),
-            contractAddress: '21234124124',
             incentives: [],
             transactions: []
         ).save(failOnError:true)
@@ -158,7 +156,7 @@ class BootStrap {
             licenseStates: stateIL,
             contract: thirtySixKThreeYears,
             contractDate: new Date('01/07/2016'),
-            contractAddress: '21234124124',
+
             incentives: [],
             transactions: []
         ).save(failOnError:true)
@@ -175,7 +173,7 @@ class BootStrap {
                 city: 'Chesterfield',
                 state: stateMO,
                 zip: '62294',
-                agentId: '123456',
+                agentId: '1234567',
                 licenseStates: stateMO,
                 incentives: [],
                 transactions: []
